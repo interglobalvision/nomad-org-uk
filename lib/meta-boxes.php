@@ -44,6 +44,39 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+	  // POST
+
+	 $post_meta = new_cmb2_box( array(
+      'id'            => $prefix . 'post_metabox',
+      'title'         => __( 'Post Options', 'cmb2' ),
+      'object_types'  => array( 'post', ), // Post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+    ) );
+
+  $post_meta->add_field( array(
+		'name'    => __( 'Color Picker', 'cmb2' ),
+		'desc'    => __( 'color for post backgound', 'cmb2' ),
+		'id'      => $prefix . 'color',
+		'type'    => 'colorpicker',
+		'default' => '#ffffff',
+	) );
+
+  $post_meta->add_field( array(
+		'name'    => __( 'Video (mp4)', 'cmb2' ),
+		'desc'    => __( '(optional) video for post background (plays on hover). This file should be an optimized .mp4', 'cmb2' ),
+		'id'      => $prefix . 'mp4',
+		'type'    => 'file'
+	) );
+
+  $post_meta->add_field( array(
+		'name'    => __( 'Video (webm)', 'cmb2' ),
+		'desc'    => __( 'Same (optional) video as above but this file should be a .webm file', 'cmb2' ),
+		'id'      => $prefix . 'webm',
+		'type'    => 'file'
+	) );
+
     // PROJECT
 
   $project_visuals_meta = new_cmb2_box( array(
