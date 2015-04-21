@@ -1,0 +1,274 @@
+@import "sanitize"
+@import "helpers"
+@import "slick"
+
+// Grid of 12 90px columns with 16px gutter
+$cols = 12
+$col = 90px
+$gutter = 16px
+.container
+  margin: 0 auto
+  width: ($col * $cols)+($gutter * $cols)
+.row
+  clear: both
+.col
+  float: left
+  margin-left: ($gutter/2)
+  margin-right: ($gutter/2)
+  box-sizing: content-box
+for col in 1..$cols
+  .col{col}
+    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+.percent-col
+  float: left
+  box-sizing: content-box
+$pcols = 10
+for pcol in 1..$pcols
+  .into-{pcol}
+    width: ( 100% / pcol )
+
+// VARIABLES
+
+$margin-small = ($gutter)
+$margin-basic = ($gutter*2)
+$margin-large = ($gutter*5)
+
+$font-size-basic = 15px
+$font-leading-basic = 1.35em
+$font-tracking-basic = 0.001em
+
+$font-size-heading = 40px
+$font-size-subheading = 30px
+$font-size-caption = 12px
+
+
+$color-black-soft = rgb(14,14,14)
+$color-white-soft = rgb(253,253,253)
+
+$basic-animation-speed = 0.3s
+
+// TYPOGRAPHY
+
+body
+  font-family:helvetica,arial,sans-serif
+  font-size: $font-size-basic
+  line-height: $font-leading-basic
+  letter-spacing: $font-tracking-basic
+
+h1
+  font-size: $font-size-heading
+
+h2, h3
+  font-size: $font-size-subheading
+
+h4
+  font-size: $font-size-basic
+
+h5, h6
+  font-size: $font-size-caption
+
+h1,h2,h3,h4,h5,h6
+  line-height: $font-leading-basic
+
+p
+  margin-bottom: 1em
+
+em, i, .font-italic
+  font-style: italic
+
+strong, b, .font-bold
+  font-weight: bold
+
+
+// LINKS
+
+a, a:active, a:visited
+  color:inherit
+  transition:opacity .2s
+  &:hover
+    opacity:.5
+
+
+// BASIC
+
+html
+  background-color: $color-white-soft
+  color: $color-black-soft
+
+img
+  max-width: 100%
+  height: auto
+
+.js-packery-container
+  opacity: 0
+  transition: opacity $basic-animation-speed
+
+
+// HEADER
+
+#header
+  margin-top: $margin-basic
+  margin-bottom: $margin-basic
+
+#menu
+  li
+    display: inline-block
+    margin-left: 0.5em
+
+
+// SEARCH
+
+#tags
+  li
+    display: inline-block
+    margin-left: 0.5em
+
+#search-input
+  border-bottom: 1px dotted $color-black-soft
+  outline: none
+
+
+// INDEX/ARCHIVE
+
+.grid-hover
+  img
+    transition: opacity $basic-animation-speed
+  &:hover
+    img
+      opacity: 0.3
+    .grid-hover-holder
+      opacity: 1
+
+.grid-hover-holder
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99
+  box-sizing: border-box
+  padding: $margin-small
+  text-align: center
+  opacity: 0
+  transition: opacity $basic-animation-speed
+
+
+// SINGLE
+
+.viewer
+  position: relative
+
+  // SLIDER
+
+.single-nav
+  position: absolute
+  z-index: 99999
+  svg
+    width: $font-size-basic
+
+#single-close
+  top: $margin-small
+  right: $margin-small
+
+#single-next
+  top: 49%
+  right: $margin-small
+
+#single-prev
+  top: 49%
+  left: $margin-small
+
+#single-slider
+  position: relative
+
+#single-slider, #single-slider-text
+  opacity: 0
+  transition: opacity $basic-animation-speed
+
+.js-slick-container, .slick-list, .slick-track
+  height: 100%
+
+.slider-img
+  margin: 0 auto
+
+#single-slider-text
+  text-align: center
+  padding: 1em 0
+  display: block
+  width: 60%
+  margin: 0 auto
+
+// MEDIA QUERIES
+
+@media screen and (max-width: ($col * $cols)+($gutter * $cols))
+
+  $col = 78px
+  $gutter = 14px
+  .container
+    margin: 0 auto
+    width: ($col * $cols)+($gutter * $cols)
+  .row
+    clear: both
+  .col
+    float: left
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+    box-sizing: content-box
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+@media screen and (max-width: 1104px)
+
+  $col = 64px
+  $gutter = 12px
+  .container
+    margin: 0 auto
+    width: ($col * $cols)+($gutter * $cols)
+  .row
+    clear: both
+  .col
+    float: left
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+    box-sizing: content-box
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+@media screen and (max-width: 912px)
+
+  $col = 47px
+  $gutter = 12px
+  .container
+    margin: 0 auto
+    width: ($col * $cols)+($gutter * $cols)
+  .row
+    clear: both
+  .col
+    float: left
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+    box-sizing: content-box
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+@media screen and (max-width: 708px)
+
+  $col = 19px
+  $gutter = 10px
+  .container
+    margin: 0 auto
+    width: ($col * $cols)+($gutter * $cols)
+  .row
+    clear: both
+  .col
+    float: left
+    margin-left: ($gutter/2)
+    margin-right: ($gutter/2)
+    box-sizing: content-box
+  for col in 1..$cols
+    .col{col}
+      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
