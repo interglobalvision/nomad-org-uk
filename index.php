@@ -7,7 +7,7 @@ get_header();
 <main id="main-content">
 
   <!-- main posts loop -->
-  <section id="posts" class="row js-packery-container">
+  <section id="posts" class="container u-align-center">
 
 <?php
 if( have_posts() ) {
@@ -15,16 +15,10 @@ if( have_posts() ) {
     the_post();
 ?>
 
-    <article <?php post_class('percent-col into-5 grid-hover js-packery-item'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class('col col12'); ?> id="post-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <?php the_post_thumbnail(); ?>
-        <div class="grid-hover-holder">
-          <div class="u-holder">
-            <div class="u-held">
-              <?php the_title(); ?>
-            </div>
-          </div>
-        </div>
+        <h2><?php the_title(); ?></h2>
       </a>
     </article>
 
