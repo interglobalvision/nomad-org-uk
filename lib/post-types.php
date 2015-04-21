@@ -16,7 +16,6 @@ add_action( 'admin_head', 'add_menu_icons_styles' );
 
 //Register Custom Post Types
 add_action( 'init', 'register_cpt_project' );
-
 function register_cpt_project() {
 
     $labels = array(
@@ -57,4 +56,47 @@ function register_cpt_project() {
     );
 
     register_post_type( 'project', $args );
+}
+
+
+add_action( 'init', 'register_cpt_video' );
+function register_cpt_video() {
+
+    $labels = array(
+        'name' => _x( 'Videos', 'video' ),
+        'singular_name' => _x( 'Video', 'video' ),
+        'add_new' => _x( 'Add New', 'video' ),
+        'add_new_item' => _x( 'Add New Video', 'video' ),
+        'edit_item' => _x( 'Edit Video', 'video' ),
+        'new_item' => _x( 'New Video', 'video' ),
+        'view_item' => _x( 'View Video', 'video' ),
+        'search_items' => _x( 'Search Videos', 'video' ),
+        'not_found' => _x( 'No videos found', 'video' ),
+        'not_found_in_trash' => _x( 'No videos found in Trash', 'video' ),
+        'parent_item_colon' => _x( 'Parent Video:', 'video' ),
+        'menu_name' => _x( 'Videos', 'video' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'taxonomies' => array( 'post_tag' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => false,
+        'exclude_from_search' => false,
+        'has_archive' => false,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'video', $args );
 }

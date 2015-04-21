@@ -34,45 +34,99 @@ function igv_cmb_metaboxes() {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_igv_';
 
+  $video_args = array(
+    'post_type' => 'video',
+    'posts_per_page' => -1
+  );
+
 	/**
 	 * Metaboxes declarations here
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
-	$gallery = new_cmb2_box( array(
-		'id'            => $prefix . 'gallery_metabox',
-		'title'         => __( 'Gallery', 'cmb2' ),
-		'object_types'  => array( 'project', ), // Post type
-		'context'       => 'normal',
-		'priority'      => 'high',
-		'show_names'    => false, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // true to keep the metabox closed by default
-	) );
+    // PROJECT
 
-	$gallery->add_field( array(
-		'name'    => __( 'Gallery', 'cmb2' ),
-		'desc'    => __( 'Slider gallery', 'cmb2' ),
-		'id'      => $prefix . 'gallery',
-		'type'    => 'wysiwyg',
-		'options' => array(
-			'textarea_rows' => 5,
-			'media_buttons' => true,
-			'tinymce' => true,
-      'quicktags' => false,
-			),
-	) );
+  $project_visuals_meta = new_cmb2_box( array(
+      'id'            => $prefix . 'project_visuals_metabox',
+      'title'         => __( 'Project Visuals', 'cmb2' ),
+      'object_types'  => array( 'project', ), // Post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+    ) );
 
-/*
-  $gallery->add_field( array(
-    'name' => 'Gallery',
-    'desc' => 'Upload and manage gallery',
-    'button' => 'Manage gallery',
-    'id'   => $prefix . 'gallery_images',
-    'type' => 'pw_gallery',
-    'sanitization_cb' => 'pw_gallery_field_sanitise',
-  ) );
-*/
+  $project_meta_visual_group = $project_visuals_meta->add_field( array(
+      'id'          => $prefix . 'project_visuals',
+      'type'        => 'group',
+      'description' => __( 'Add as many project visuals here as you want. They are either galleries or videos.', 'cmb' ),
+      'options'     => array(
+        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+        'remove_button' => __( 'Remove Entry', 'cmb' ),
+        'sortable'      => true, // beta
+      ),
+    ) );
+
+  $project_visuals_meta->add_group_field( $project_meta_visual_group, array(
+      'name' => 'Thumbnail',
+      'description' => 'This is the thumbnail for this visual item. If the visual is a video setting this will override the automatic thumbnail.',
+      'id'   => 'thumbnail',
+      'type' => 'file',
+    ) );
+
+  $project_visuals_meta->add_group_field( $project_meta_visual_group, array(
+      'name' => 'Gallery',
+      'description' => 'Add a wordpress gallery here',
+      'id'   => 'gallery',
+      'type' => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 4, )
+    ) );
+
+  $project_visuals_meta->add_group_field( $project_meta_visual_group, array(
+      'name' => 'Video',
+      'description' => 'If this visual element is a video choose it from the already added videos here. If you have not added it go to Videos>Add New',
+      'id'   => 'video',
+      'type'    => 'select',
+      'show_option_none' => true,
+      'options' => get_post_objects($video_args),
+    ) );
+
+
+  $project_copy_meta = new_cmb2_box( array(
+      'id'            => $prefix . 'project_copy_metabox',
+      'title'         => __( 'Project Copy', 'cmb2' ),
+      'object_types'  => array( 'project', ), // Post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+    ) );
+
+  $project_meta_copy_group = $project_copy_meta->add_field( array(
+      'id'          => $prefix . 'project_copy',
+      'type'        => 'group',
+      'description' => __( 'Add as many copy sections for the project as you want', 'cmb' ),
+      'options'     => array(
+        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+        'remove_button' => __( 'Remove Entry', 'cmb' ),
+        'sortable'      => true, // beta
+      ),
+    ) );
+
+  $project_copy_meta->add_group_field( $project_meta_copy_group, array(
+      'name' => 'Title',
+      'description' => 'Title of this project section',
+      'id'   => 'title',
+      'type' => 'text',
+    ) );
+
+  $project_copy_meta->add_group_field( $project_meta_copy_group, array(
+      'name' => 'Copy',
+      'description' => 'Add the copy for the section here',
+      'id'   => 'copy',
+      'type' => 'wysiwyg',
+      'options' => array( 'textarea_rows' => 9, )
+    ) );
 
 }
 
