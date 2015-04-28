@@ -30,7 +30,7 @@ if( have_posts() ) {
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
-                <h2><?php if (!empty($title)) {echo $title;} ?></h2>
+                <h4><?php if (!empty($title)) {echo $title;} ?></h4>
               </div>
             </div>
           </div>
@@ -47,8 +47,8 @@ if( have_posts() ) {
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
 ?>
-  <li class="js-project-copy-link" data-target-id="project-copy-<?php echo $project_copy_index; ?>">
-    <h3><?php echo $copy_section['title']; ?></h3>
+  <li class="js-project-copy-link u-dummy-link" data-target-id="project-copy-<?php echo $project_copy_index; ?>">
+    <h4 class="font-uppercase"><?php echo $copy_section['title']; ?></h4>
   </li>
 <?php
   $project_copy_index++;
@@ -57,14 +57,17 @@ if( have_posts() ) {
       </ul>
 
       <section id="project-copy">
+         <div class="project-copy-section" id="project-copy-main">
+          <?php the_content(); ?>
+        </div>
 <?php
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
 ?>
-  <div class="project-copy-section" id="project-copy-<?php echo $project_copy_index; ?>">
-    <h3><?php echo $copy_section['title']; ?></h3>
-    <?php echo wpautop($copy_section['copy']); ?>
-  </div>
+        <div class="project-copy-section" id="project-copy-<?php echo $project_copy_index; ?>">
+          <h4 class="font-uppercase"><?php echo $copy_section['title']; ?></h4>
+          <?php echo wpautop($copy_section['copy']); ?>
+        </div>
 <?php
   $project_copy_index++;
   }

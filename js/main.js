@@ -143,6 +143,14 @@ jQuery(document).ready(function () {
   'use strict';
   l('Hola Globie');
 
+// SINGLE PROJECT
+
+  $('.js-project-copy-link').on('click', function() {
+    var target = '#' + $(this).data('target-id');
+    $(target).ScrollTo();
+  });
+
+
 // PACKERY
   if ( $('.js-packery-container').length ) {
     $('.js-packery-container').imagesLoaded( function() {
@@ -156,13 +164,8 @@ jQuery(document).ready(function () {
     });
   }
 
-// SLICK
-/*
-  var resizeFunction = debounce(function() {
-    resizeImages();
-  }, 30);
-*/
 
+// SLICK
   if ( $('.js-slick-item').length ) {
     Slick.init();
   }

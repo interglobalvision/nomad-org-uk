@@ -35,7 +35,7 @@ $margin-small = ($gutter)
 $margin-basic = ($gutter*2)
 $margin-large = ($gutter*5)
 
-$font-size-basic = 15px
+$font-size-basic = 16px
 $font-leading-basic = 1.35em
 $font-tracking-basic = 0.001em
 
@@ -43,9 +43,10 @@ $font-size-heading = 40px
 $font-size-subheading = 30px
 $font-size-caption = 12px
 
-
 $color-black-soft = rgb(14,14,14)
 $color-white-soft = rgb(253,253,253)
+
+$color-blue = blue
 
 $basic-animation-speed = 0.3s
 
@@ -82,14 +83,16 @@ em, i, .font-italic
 strong, b, .font-bold
   font-weight: normal
 
+.font-uppercase
+  text-transform: uppercase
 
 // LINKS
 
-a, a:active, a:visited
+a, a:active, a:visited, .u-dummy-link
   color:inherit
-  transition:opacity .2s
   &:hover
-    opacity:.5
+    color: $color-blue
+    cursor: pointer
 
 
 // BASIC
@@ -200,6 +203,16 @@ img
   display: block
   width: 60%
   margin: 0 auto
+
+
+// SINGLE PROJECT
+
+#project-copy-nav
+  margin-bottom: $margin-basic
+  li
+    list-style: none
+
+
 
 // MEDIA QUERIES
 
