@@ -12,26 +12,32 @@ if( have_posts() ) {
     the_post();
     $visuals = get_post_meta($post->ID, '_igv_project_visuals');
     $copy = get_post_meta($post->ID, '_igv_project_copy');
+    $title = get_post_meta($post->ID, '_igv_project_title');
 ?>
 
     <article <?php post_class(); ?> id="project">
-      <?php the_title(); ?>
+      <h1 class="u-align-center"><?php the_title(); ?></h1>
 
-      <section id="project-visuals">
+      <section id="project-visuals" class="row js-packery-container">
  <?php
   foreach ($visuals[0] as $visual) {
-?>
-        <div class="project-visual">
-<?php
     if (!empty($visual['video'])) {
       var_dump($visual['video']);
     } else {
       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
-      var_dump($thumbnail);
-    }
 ?>
+        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-gallery" data-gallery="<?php if (!empty($visual['gallery'])) { echo $visual['gallery'];} ?>">
+          <div class="grid-hover-holder">
+            <div class="u-holder">
+              <div class="u-held">
+                <h2><?php if (!empty($title)) {echo $title;} ?></h2>
+              </div>
+            </div>
+          </div>
+          <img src="<?php echo $thumbnail[0]; ?>" />
         </div>
 <?php
+    }
   }
 ?>
       </section>
