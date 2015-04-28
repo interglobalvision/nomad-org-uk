@@ -16,7 +16,10 @@ var retina = Modernizr.highresdisplay,
 
   windowHeight = $(window).outerHeight(),
 
-  captionHeight = $('#single-slider-text').outerHeight();
+  captionHeight = $('#single-slider-text').outerHeight(),
+
+  overlay = $('#overlay'),
+  overlayGallery = $('#overlay-gallery');
 
 // FUNCTIONS
 
@@ -87,7 +90,7 @@ function debounce(func, wait, immediate) {
 var Slick = {
   init: function() {
     var _this = this;
-    $('.js-slick-container').on({
+    $('#overlay-gallery').on({
       init: function(event, slick){
         var currentSlideIndex = $('.slick-active').attr('data-slick-index');
         // set caption
@@ -115,8 +118,8 @@ var Slick = {
       }
     })
     .slick({
-      prevArrow: '#slick-prev',
-      nextArrow: '#slick-next',
+      prevArrow: '#overlay-previous',
+      nextArrow: '#overlay-next',
     });
 
     $('.js-slick-item').on('click', function() {
@@ -141,9 +144,22 @@ var Slick = {
 
 jQuery(document).ready(function () {
   'use strict';
-  l('Hola Globie');
 
 // SINGLE PROJECT
+  $('.js-load-gallery').on('click', function() {
+    var target = '#overlay-gallery-' + $(this).data('gallery');
+    var insert = $(target).html();
+
+    overlayGallery.html(insert);
+    Slick.init();
+    overlay.show();
+    $('body').scrollTop(0);
+  });
+
+  $('#overlay-close').on('click', function() {
+    overlay.hide();
+    overlayGallery.html('');
+  });
 
   $('.js-project-copy-link').on('click', function() {
     var target = '#' + $(this).data('target-id');
@@ -166,9 +182,11 @@ jQuery(document).ready(function () {
 
 
 // SLICK
+/*
   if ( $('.js-slick-item').length ) {
     Slick.init();
   }
+*/
 
   $(window).on('resize', function() {
     Slick.resizeImages();

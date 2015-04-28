@@ -1012,6 +1012,41 @@ img {
   width: 60%;
   margin: 0 auto;
 }
+#overlay {
+  position: absolute;
+  background-color: #fdfdfd;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
+}
+.overlay-nav {
+  position: absolute;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 16px;
+}
+.overlay-nav svg {
+  max-width: 16px;
+  height: auto;
+}
+#overlay-close {
+  top: 0;
+  right: 0;
+}
+#overlay-next {
+  top: 49%;
+  right: 0;
+}
+#overlay-previous {
+  top: 49%;
+  left: 0;
+}
+#project-visuals-overlay {
+  display: none;
+}
 #project-copy-nav {
   margin-bottom: 32px;
 }

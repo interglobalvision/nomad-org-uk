@@ -20,13 +20,14 @@ if( have_posts() ) {
 
       <section id="project-visuals" class="row js-packery-container">
  <?php
+  $visuals_index = 0;
   foreach ($visuals[0] as $visual) {
     if (!empty($visual['video'])) {
       var_dump($visual['video']);
     } else {
       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
 ?>
-        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-gallery" data-gallery="<?php if (!empty($visual['gallery'])) { echo $visual['gallery'];} ?>">
+        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
@@ -38,6 +39,25 @@ if( have_posts() ) {
         </div>
 <?php
     }
+    $visuals_index++;
+  }
+?>
+      </section>
+
+      <section id="project-visuals-overlay">
+  <?php
+  $visuals_index = 0;
+  foreach ($visuals[0] as $visual) {
+    if (!empty($visual['video'])) {
+      var_dump($visual['video']);
+    } else if (!empty($visual['gallery'])) {
+?>
+        <div class="project-visuals-overlay" id="overlay-gallery-<?php echo $visuals_index; ?>">
+          <?php echo do_shortcode($visual['gallery']); ?>
+        </div>
+<?php
+    }
+    $visuals_index++;
   }
 ?>
       </section>
@@ -87,6 +107,20 @@ if( have_posts() ) {
 <!-- end main-content -->
 
 </main>
+
+<section id="overlay">
+  <nav id="overlay-close" class="overlay-nav u-pointer">
+    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+  </nav>
+  <nav id="overlay-next" class="overlay-nav u-pointer">
+    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/next.svg'); ?>
+  </nav>
+  <nav id="overlay-previous" class="overlay-nav u-pointer">
+    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/prev.svg'); ?>
+  </nav>
+  <div id="overlay-caption"></div>
+  <div id="overlay-gallery" class="js-slick-container"></div>
+</section>
 
 <?php
 get_footer();
