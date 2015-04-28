@@ -93,9 +93,9 @@ function igv_cmb_metaboxes() {
       'type'        => 'group',
       'description' => __( 'Add as many project visuals here as you want. They are either galleries or videos.', 'cmb' ),
       'options'     => array(
-        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-        'add_button'    => __( 'Add Another Entry', 'cmb' ),
-        'remove_button' => __( 'Remove Entry', 'cmb' ),
+        'group_title'   => __( 'Visual Element {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+        'add_button'    => __( 'Add Another Project Visual Element', 'cmb' ),
+        'remove_button' => __( 'Remove Element', 'cmb' ),
         'sortable'      => true, // beta
       ),
     ) );
@@ -139,9 +139,9 @@ function igv_cmb_metaboxes() {
       'type'        => 'group',
       'description' => __( 'Add as many copy sections for the project as you want', 'cmb' ),
       'options'     => array(
-        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-        'add_button'    => __( 'Add Another Entry', 'cmb' ),
-        'remove_button' => __( 'Remove Entry', 'cmb' ),
+        'group_title'   => __( 'Copy Section {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+        'add_button'    => __( 'Add Another Copy Section', 'cmb' ),
+        'remove_button' => __( 'Remove Copy Section', 'cmb' ),
         'sortable'      => true, // beta
       ),
     ) );
