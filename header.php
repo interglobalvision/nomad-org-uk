@@ -53,8 +53,8 @@
       <ul id="menu">
         <li><a href="<?php echo home_url('project/'); ?>">projects</a></li>
         <li><a href="<?php echo home_url('about/'); ?>">about</a></li>
-        <li><a href="<?php echo home_url('news/'); ?>">news</a></li>
-        <li><a href="<?php echo home_url('search/'); ?>">search</a></li>
+        <li><a href="<?php echo home_url('category/news/'); ?>">news</a></li>
+<!--         <li><a href="<?php echo home_url('search/'); ?>">search</a></li> -->
         <li><a href="<?php echo home_url('email-signup/'); ?>">email signup</a></li>
       </ul>
     </div>
