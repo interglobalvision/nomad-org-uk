@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Cinetype-Regular';
+  src: url("fonts/GT-Cinetype-Regular.eot?#iefix") format('embedded-opentype'), url("fonts/GT-Cinetype-Regular.woff") format('woff'), url("fonts/GT-Cinetype-Regular.ttf") format('truetype'), url("fonts/GT-Cinetype-Regular.svg#GT-Cinetype-Regular-Italic") format('svg');
+}
+@font-face {
+  font-family: 'Cinetype-Italic';
+  src: url("fonts/GT-Cinetype-Regular-Italic.eot?#iefix") format('embedded-opentype'), url("fonts/GT-Cinetype-Regular-Italic.woff") format('woff'), url("fonts/GT-Cinetype-Regular-Italic.ttf") format('truetype'), url("fonts/GT-Cinetype-Regular-Italic.svg#GT-Cinetype-Regular") format('svg');
+}
 /* sanitize.css | CC0 Public Domain | github.com/jonathantneal/sanitize.css */
 :root {
   -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -848,7 +856,7 @@ ul.u-inline-list li {
   width: 10%;
 }
 body {
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Cinetype-Regular', helvetica, arial, sans-serif;
   font-size: 15px;
   line-height: 1.35em;
   letter-spacing: 0.001em;
@@ -881,12 +889,13 @@ p {
 em,
 i,
 .font-italic {
-  font-style: italic;
+  font-family: 'Cinetype-Italic', helvetica, arial, sans-serif;
+  font-style: normal;
 }
 strong,
 b,
 .font-bold {
-  font-weight: bold;
+  font-weight: normal;
 }
 a,
 a:active,
