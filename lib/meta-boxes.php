@@ -108,6 +108,13 @@ function igv_cmb_metaboxes() {
     ) );
 
   $project_visuals_meta->add_group_field( $project_meta_visual_group, array(
+      'name' => 'title',
+      'description' => 'This is the title for this visual item.',
+      'id'   => 'title',
+      'type' => 'text',
+    ) );
+
+  $project_visuals_meta->add_group_field( $project_meta_visual_group, array(
       'name' => 'Gallery',
       'description' => 'Add a wordpress gallery here',
       'id'   => 'gallery',
