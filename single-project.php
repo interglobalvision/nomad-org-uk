@@ -23,7 +23,21 @@ if( have_posts() ) {
   $visuals_index = 0;
   foreach ($visuals[0] as $visual) {
     if (!empty($visual['video'])) {
-      var_dump($visual['video']);
+      $video = get_post($visual['video']);
+      $video_meta = get_post_meta($visual['video']);
+      $thumbnail = wp_get_attachment_image_src($video->ID, 'project-thumb');
+?>
+        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>>">
+          <div class="grid-hover-holder">
+            <div class="u-holder">
+              <div class="u-held">
+                <h4><?php echo $video->post_title;; ?></h4>
+              </div>
+            </div>
+          </div>
+          <img src="<?php echo $thumbnail[0]; ?>" />
+        </div>
+<?php
     } else {
       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
 ?>
