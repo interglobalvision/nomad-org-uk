@@ -131,6 +131,15 @@ function is_single_type($type, $post) {
 
 // PRE GET POSTS
 
+function home_post_types($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_home) {
+      $query->set('post_type', array( 'post', 'project' ));
+    }
+  }
+}
+add_action('pre_get_posts','home_post_types');
+
 function tag_archive_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_tag) {
