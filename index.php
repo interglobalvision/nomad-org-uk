@@ -13,16 +13,13 @@ get_header();
 if( have_posts() ) {
   while( have_posts() ) {
     the_post();
-?>
 
-    <article <?php post_class('col col12'); ?> id="post-<?php the_ID(); ?>">
-      <a href="<?php the_permalink() ?>">
-        <?php the_post_thumbnail(); ?>
-        <h2><?php the_title(); ?></h2>
-      </a>
-    </article>
+    if ( get_post_type($post->ID) == 'project') {
+      get_template_part('partials/index-project');
+    } else {
+      get_template_part('partials/index-post');
+    }
 
-<?php
   }
 } else {
 ?>

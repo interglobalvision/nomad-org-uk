@@ -942,6 +942,29 @@ img {
   border-bottom: 1px dotted #0e0e0e;
   outline: none;
 }
+.type-post,
+.type-project {
+  margin-bottom: 16px;
+}
+.type-post {
+  box-sizing: border-box;
+  padding: 32px;
+  color: #fdfdfd;
+}
+.post-copy {
+  display: none;
+  padding-top: 16px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 700px;
+}
+.post-copy a,
+.post-copy a:active,
+.post-copy a:visited,
+.post-copy .u-dummy-link {
+  color: #00f;
+  text-decoration: underline;
+}
 .grid-hover img {
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;

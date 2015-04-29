@@ -14,6 +14,8 @@ var retina = Modernizr.highresdisplay,
 
   margin = 35,
 
+  basicAnimationSpeed = 700,
+
   windowHeight = $(window).outerHeight(),
 
   captionHeight = $('#single-slider-text').outerHeight(),
@@ -162,6 +164,20 @@ var Slick = {
 
 jQuery(document).ready(function () {
   'use strict';
+
+// INDEX
+  $('.js-post-toggle').on('click', function() {
+    var $this = $(this);
+    var $copy = $this.parent().find('.post-copy');
+
+    if ($this.data('open') === true) {
+      $copy.slideUp(basicAnimationSpeed);
+      $this.data('open', false);
+    } else {
+      $copy.slideDown(basicAnimationSpeed);
+      $this.data('open', true);
+    }
+  });
 
 // SINGLE PROJECT
   $('.js-load-gallery').on('click', function() {
