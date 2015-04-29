@@ -79,6 +79,29 @@ function igv_cmb_metaboxes() {
 
     // PROJECT
 
+  $project_meta = new_cmb2_box( array(
+      'id'            => $prefix . 'project_metabox',
+      'title'         => __( 'Project Meta', 'cmb2' ),
+      'object_types'  => array( 'project', ), // Post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+    ) );
+
+  $project_meta->add_field( array(
+		'name'    => __( 'Video (mp4)', 'cmb2' ),
+		'desc'    => __( '(optional) video for post background (plays on hover). This file should be an optimized .mp4', 'cmb2' ),
+		'id'      => $prefix . 'mp4',
+		'type'    => 'file'
+	) );
+
+  $project_meta->add_field( array(
+		'name'    => __( 'Video (webm)', 'cmb2' ),
+		'desc'    => __( 'Same (optional) video as above but this file should be a .webm file', 'cmb2' ),
+		'id'      => $prefix . 'webm',
+		'type'    => 'file'
+	) );
+
   $project_visuals_meta = new_cmb2_box( array(
       'id'            => $prefix . 'project_visuals_metabox',
       'title'         => __( 'Project Visuals', 'cmb2' ),
