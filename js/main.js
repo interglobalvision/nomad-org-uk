@@ -109,16 +109,10 @@ function debounce(func, wait, immediate) {
 
   // SLICK
 
-overlayGallery.on({
-  init: function(event, slick){
-    Slick.resizeImages();
-  }
-});
-
 var Slick = {
   init: function() {
     var _this = this;
-    overlayGallery.on({
+    $('.js-slick-container').on({
       init: function(event, slick){
         //var currentSlideIndex = $('.slick-active').attr('data-slick-index');
         // set caption
@@ -187,7 +181,7 @@ jQuery(document).ready(function () {
 
   $('#overlay-close').on('click', function() {
     overlay.hide();
-    overlayGallery.slick('unslick').html('');
+    $('.js-slick-container').slick('unslick').html('');
   });
 
   $('.js-project-copy-link').on('click', function() {
