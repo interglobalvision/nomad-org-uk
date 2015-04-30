@@ -234,14 +234,14 @@ img
 
 // OVERLAY
 
-#overlay
+.overlay
   position: absolute
   background-color: $color-white-soft
   top: 0
   left: 0
   width: 100%
   height: 100%
-  z-index: 9
+  z-index: 999
   display: none
 
 .overlay-nav
@@ -253,20 +253,45 @@ img
     max-width: $margin-small
     height: auto
 
-#overlay-close
+.overlay-close
   top: 0
   right: 0
 
-#overlay-next
+.overlay-next
   top: 49%
   right: 0
 
-#overlay-previous
+.overlay-previous
   top: 49%
   left: 0
 
+  // OVERLAY VIDEO
+
+#video-overlay
+  .u-holder
+    position: absolute
+    top: 0
+    width: 90%
+    left: 5%
+
+.vimeo-wrapper
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+
+.vimeo-wrapper iframe
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
 
 // SINGLE PROJECT
+
+#project-visuals
+  margin-bottom: $margin-large
 
 #project-visuals-overlay
   display: none
@@ -275,6 +300,9 @@ img
   margin-bottom: $margin-basic
   li
     list-style: none
+
+#project-copy-section
+  margin-bottom: $margin-basic
 
 
 // MEDIA QUERIES

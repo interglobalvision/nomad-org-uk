@@ -27,7 +27,7 @@ if( have_posts() ) {
       $video_meta = get_post_meta($visual['video']);
       $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb');
 ?>
-        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>>">
+        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>">
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
@@ -122,18 +122,32 @@ if( have_posts() ) {
 
 </main>
 
-<section id="overlay">
-  <nav id="overlay-close" class="overlay-nav u-pointer">
+<section id="gallery-overlay" class="overlay">
+  <nav id="gallery-overlay-close" class="overlay-nav overlay-close u-pointer">
     <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
   </nav>
-  <nav id="overlay-next" class="overlay-nav u-pointer">
+  <nav id="gallery-overlay-next" class="overlay-nav overlay-next u-pointer">
     <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/next.svg'); ?>
   </nav>
-  <nav id="overlay-previous" class="overlay-nav u-pointer">
+  <nav id="gallery-overlay-previous" class="overlay-nav overlay-previous u-pointer">
     <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/prev.svg'); ?>
   </nav>
-  <div id="overlay-caption"></div>
-  <div id="overlay-gallery" class="js-slick-container"></div>
+  <div id="gallery-overlay-caption"></div>
+  <div id="gallery-overlay-insert" class="js-slick-container"></div>
+</section>
+
+<section id="video-overlay" class="overlay">
+  <nav id="video-overlay-close" class="overlay-nav overlay-close u-pointer">
+    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+  </nav>
+  <div id="video-overlay-caption"></div>
+  <div class="u-holder">
+    <div class="u-held">
+      <div id="video-overlay-insert" class="vimeo-wrapper">
+
+      </div>
+    </div>
+  </div>
 </section>
 
 <?php
