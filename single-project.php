@@ -25,9 +25,9 @@ if( have_posts() ) {
     if (!empty($visual['video'])) {
       $video = get_post($visual['video']);
       $video_meta = get_post_meta($visual['video']);
-      $thumbnail = wp_get_attachment_image_src($video->ID, 'project-thumb');
+      $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb');
 ?>
-        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>>">
+        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>>">
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
@@ -41,7 +41,7 @@ if( have_posts() ) {
     } else {
       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
 ?>
-        <div class="project-visual percent-col into-3 grid-hover js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
+        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
