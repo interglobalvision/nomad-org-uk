@@ -12,11 +12,12 @@ if( have_posts() ) {
     the_post();
     $visuals = get_post_meta($post->ID, '_igv_project_visuals');
     $copy = get_post_meta($post->ID, '_igv_project_copy');
-    $title = get_post_meta($post->ID, '_igv_project_title');
 ?>
 
     <article <?php post_class(); ?> id="project">
-      <h1 class="u-align-center"><?php the_title(); ?></h1>
+      <header id="project-header">
+        <h1 class="u-align-center"><?php the_title(); ?></h1>
+      </header>
 
       <section id="project-visuals" class="row js-packery-container">
  <?php
@@ -45,7 +46,7 @@ if( have_posts() ) {
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
-                <h4><?php if (!empty($title)) {echo $title;} ?></h4>
+                <h4><?php if (!empty($visual['title'])) {echo $visual['title'];} ?></h4>
               </div>
             </div>
           </div>

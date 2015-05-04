@@ -165,6 +165,11 @@ var Slick = {
 jQuery(document).ready(function () {
   'use strict';
 
+// MENU
+
+  $('#scroll-to-menu').on('click', function() {
+    $('html').ScrollTo();
+  });
 
 // INDEX
   $('.js-post-toggle').on('click', function() {
@@ -182,6 +187,10 @@ jQuery(document).ready(function () {
 
 
 // SINGLE PROJECT
+
+  if ($('body').hasClass('single-project')) {
+    $('#main-content').ScrollTo();
+  }
 
   // OVERLAY GALLERY
   $('.js-load-gallery').on('click', function() {
