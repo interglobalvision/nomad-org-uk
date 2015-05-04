@@ -121,7 +121,7 @@ img
 #scroll-to-menu
   position: fixed
   top: $margin-basic + 2px
-  right: $margin-basic
+  right: $margin-small
 
 // SEARCH
 
@@ -141,13 +141,23 @@ img
   margin-bottom: $margin-small
 
 .type-post
+  color: $color-white-soft
+
+.post-title
   box-sizing: border-box
   padding: $margin-basic
-  color: $color-white-soft
+  position: relative
+  background-size: cover
+  background-position: center center
+
+.post-toggle
+  position: absolute
+  right: $margin-basic
 
 .post-copy
   display: none
-  padding-top: $margin-small
+  box-sizing: border-box
+  padding: $margin-small $margin-basic $margin-basic
   text-align: left
   margin: 0 auto
   max-width: 700px

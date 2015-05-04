@@ -900,7 +900,7 @@ img {
 #scroll-to-menu {
   position: fixed;
   top: 34px;
-  right: 32px;
+  right: 16px;
 }
 #tags li {
   display: inline-block;
@@ -915,13 +915,23 @@ img {
   margin-bottom: 16px;
 }
 .type-post {
+  color: #fdfdfd;
+}
+.post-title {
   box-sizing: border-box;
   padding: 32px;
-  color: #fdfdfd;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+.post-toggle {
+  position: absolute;
+  right: 32px;
 }
 .post-copy {
   display: none;
-  padding-top: 16px;
+  box-sizing: border-box;
+  padding: 16px 32px 32px;
   text-align: left;
   margin: 0 auto;
   max-width: 700px;
