@@ -30,6 +30,7 @@ $gutter = 16px
 $margin-small = ($gutter)
 $margin-basic = ($gutter*2)
 $margin-large = ($gutter*5)
+$margin-extra-large = ($gutter*8)
 
 $font-size-basic = 16px
 $font-leading-basic = 1.35em
@@ -117,6 +118,10 @@ img
     display: inline-block
     margin-left: 0.5em
 
+#scroll-to-menu
+  position: fixed
+  top: $margin-basic + 2px
+  right: $margin-basic
 
 // SEARCH
 
@@ -286,19 +291,22 @@ img
 
 // SINGLE PROJECT
 
+#project-header
+  padding: $margin-basic 0
+
 #project-visuals
-  margin-bottom: $margin-large
+  margin-bottom: $margin-extra-large
 
 #project-visuals-overlay
   display: none
 
 #project-copy-nav
-  margin-bottom: $margin-basic
+  margin-bottom: $margin-large
   li
     list-style: none
 
 #project-copy-section
-  margin-bottom: $margin-basic
+  margin-bottom: $margin-extra-large
 
 
 // MEDIA QUERIES
