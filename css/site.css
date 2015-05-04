@@ -1084,6 +1084,13 @@ img {
 #project-copy-nav li {
   list-style: none;
 }
-#project-copy-section {
-  margin-bottom: 128px;
+.project-copy-section {
+  margin-bottom: 80px;
+}
+.project-copy-section img {
+  float: left;
+  padding: 16px;
+}
+.project-copy-section img.alignright {
+  float: right;
 }
