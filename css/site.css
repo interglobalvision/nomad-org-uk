@@ -943,6 +943,9 @@ img {
   color: #00f;
   text-decoration: underline;
 }
+.project-video {
+  width: 100%;
+}
 .grid-hover img {
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;

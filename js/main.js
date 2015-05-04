@@ -34,7 +34,7 @@ function lazyLoadImages(selector) {
     var windowWidth = $(window).width();
 
     if (retina) {
-      if (windowWidth > (largeImageThreshold*1.5)) {
+      if (windowWidth > (largeImageThreshold * 1.5)) {
         $this.attr('src', data.largest);
       } else {
         $this.attr('src', data.large);
@@ -56,7 +56,7 @@ function slickLazyLoad(selector) {
     var windowWidth = $(window).width();
 
     if (retina) {
-      if (windowWidth > (largeImageThreshold*1.5)) {
+      if (windowWidth > (largeImageThreshold * 1.5)) {
         $this.attr('data-lazy', data.largest);
       } else {
         $this.attr('data-lazy', data.large);
@@ -183,6 +183,18 @@ jQuery(document).ready(function () {
       $copy.slideDown(basicAnimationSpeed);
       $this.data('open', true);
     }
+  });
+
+  // VIDEO HOVERS
+
+  $('.project-video').on({
+    'mouseenter': function() {
+      this.play();
+    },
+    'mouseleave': function() {
+      this.pause();
+      this.currentTime = 0;
+    },
   });
 
 

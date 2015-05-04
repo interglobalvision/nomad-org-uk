@@ -2,6 +2,8 @@
   global $post;
   $meta = get_post_meta($post->ID);
 
+  $mp4 = false;
+  $webm = false;
   if (!empty($meta['_igv_mp4'][0])) {
     $mp4 = $meta['_igv_mp4'][0];
   }
@@ -9,10 +11,25 @@
     $webm = $meta['_igv_webm'][0];
   }
 
+  $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
 ?>
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
-        <?php the_post_thumbnail(); ?>
+<!--           <?php the_post_thumbnail(); ?> -->
+        <video class="project-video" preload="auto" loop="true" muted="true">
+<?php
+if ($webm) {
+?>
+<source src="<?php echo $webm; ?>" type='video/webm'/>
+<?php
+}
+if ($mp4) {
+?>
+<source src="<?php echo $mp4; ?>" type='video/mp4'/>
+<?php
+}
+?>
+        </video>
         <h2><?php the_title(); ?></h2>
       </a>
     </article>
