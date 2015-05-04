@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content" class="container">
+<main id="main-content" class="inner-container">
 
 <?php
 if( have_posts() ) {

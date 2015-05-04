@@ -49,7 +49,7 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
-	  // POST
+   // POST
 
 	 $post_meta = new_cmb2_box( array(
       'id'            => $prefix . 'post_metabox',

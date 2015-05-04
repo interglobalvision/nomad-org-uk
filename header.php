@@ -46,10 +46,10 @@
 
 <header id="header" class="container">
   <div class="row">
-    <div class="col col6">
+    <div class="col percent-col into-2">
       <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
     </div>
-    <div class="col col6 u-align-right">
+    <div class="col percent-col into-2 u-align-right">
       <ul id="menu">
         <li><a href="<?php echo home_url('project/'); ?>">projects</a></li>
         <li><a href="<?php echo home_url('about/'); ?>">about</a></li>
@@ -69,7 +69,7 @@ if (is_search() || is_tag() || is_page('Search')) {
   if (is_search()) {
     $search_term =  $_GET['s'];
 ?>
-    <div class="col col12 u-align-center">
+    <div class="u-align-center">
       <form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
         <label id="search-label">Results for: </label>
         <input type="search" id="search-input" placeholder="<?php echo $search_term; ?>" name="s" title="<?php echo esc_attr_x( 'Results for:', 'label' ) ?>" />
@@ -78,7 +78,7 @@ if (is_search() || is_tag() || is_page('Search')) {
 <?php
   } else if (is_page('Search') || is_tag()) {
 ?>
-    <div class="col col12 u-align-center">
+    <div class="u-align-center">
       <form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
         <label id="search-label">Search for: </label>
         <input type="search" id="search-input" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
@@ -87,7 +87,7 @@ if (is_search() || is_tag() || is_page('Search')) {
 <?php
   }
 ?>
-    <div class="col col12 u-align-center">
+    <div class="u-align-center">
       <ul id="tags">
 <?php
   $tags = get_tags();

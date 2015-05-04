@@ -3,23 +3,17 @@
 @import "helpers"
 @import "slick"
 
-// Grid of 12 90px columns with 16px gutter
-$cols = 12
-$col = 90px
-$gutter = 16px
 .container
   margin: 0 auto
-  width: ($col * $cols)+($gutter * $cols)
-.row
-  clear: both
-.col
-  float: left
-  margin-left: ($gutter/2)
-  margin-right: ($gutter/2)
-  box-sizing: content-box
-for col in 1..$cols
-  .col{col}
-    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+  max-width: 1920px
+  min-width: 315px
+  width: 90%
+
+.inner-container
+  margin: 0 auto
+  max-width: 1080px
+  min-width: 310px
+  width: 55%
 
 .percent-col
   float: left
@@ -30,6 +24,8 @@ for pcol in 1..$pcols
     width: ( 100% / pcol )
 
 // VARIABLES
+
+$gutter = 16px
 
 $margin-small = ($gutter)
 $margin-basic = ($gutter*2)
@@ -307,74 +303,4 @@ img
 
 // MEDIA QUERIES
 
-@media screen and (max-width: ($col * $cols)+($gutter * $cols))
-
-  $col = 78px
-  $gutter = 14px
-  .container
-    margin: 0 auto
-    width: ($col * $cols)+($gutter * $cols)
-  .row
-    clear: both
-  .col
-    float: left
-    margin-left: ($gutter/2)
-    margin-right: ($gutter/2)
-    box-sizing: content-box
-  for col in 1..$cols
-    .col{col}
-      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-@media screen and (max-width: 1104px)
-
-  $col = 64px
-  $gutter = 12px
-  .container
-    margin: 0 auto
-    width: ($col * $cols)+($gutter * $cols)
-  .row
-    clear: both
-  .col
-    float: left
-    margin-left: ($gutter/2)
-    margin-right: ($gutter/2)
-    box-sizing: content-box
-  for col in 1..$cols
-    .col{col}
-      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-@media screen and (max-width: 912px)
-
-  $col = 47px
-  $gutter = 12px
-  .container
-    margin: 0 auto
-    width: ($col * $cols)+($gutter * $cols)
-  .row
-    clear: both
-  .col
-    float: left
-    margin-left: ($gutter/2)
-    margin-right: ($gutter/2)
-    box-sizing: content-box
-  for col in 1..$cols
-    .col{col}
-      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
-@media screen and (max-width: 708px)
-
-  $col = 19px
-  $gutter = 10px
-  .container
-    margin: 0 auto
-    width: ($col * $cols)+($gutter * $cols)
-  .row
-    clear: both
-  .col
-    float: left
-    margin-left: ($gutter/2)
-    margin-right: ($gutter/2)
-    box-sizing: content-box
-  for col in 1..$cols
-    .col{col}
-      width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+// @media screen and (max-width: px)

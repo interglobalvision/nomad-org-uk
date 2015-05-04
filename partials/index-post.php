@@ -12,7 +12,7 @@
     $has_copy = false;
   }
 ?>
-    <article <?php post_class('col col12'); ?> id="post-<?php the_ID(); ?>" <?php
+    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>" <?php
   if ($color) {
     echo 'style="background-color: ' . $color .'"';
   }

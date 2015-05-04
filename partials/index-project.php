@@ -10,7 +10,7 @@
   }
 
 ?>
-    <article <?php post_class('col col12'); ?> id="post-<?php the_ID(); ?>">
+    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
         <?php the_post_thumbnail(); ?>
         <h2><?php the_title(); ?></h2>
