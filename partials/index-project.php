@@ -15,21 +15,23 @@
 ?>
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
-<!--           <?php the_post_thumbnail(); ?> -->
-        <video class="project-video" preload="auto" loop="true" muted="true">
 <?php
 if ($webm) {
 ?>
-<source src="<?php echo $webm; ?>" type='video/webm'/>
-<?php
-}
-if ($mp4) {
+        <video class="project-video" preload="auto" loop="true" muted="true">
+          <source src="<?php echo $webm; ?>" type='video/webm'/>
+<?php if ($mp4) {
 ?>
-<source src="<?php echo $mp4; ?>" type='video/mp4'/>
+          <source src="<?php echo $mp4; ?>" type='video/mp4'/>
 <?php
 }
 ?>
         </video>
+<?php
+} else {
+  the_post_thumbnail();
+}
+?>
         <h2><?php the_title(); ?></h2>
       </a>
     </article>
