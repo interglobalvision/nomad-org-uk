@@ -16,6 +16,8 @@ var retina = Modernizr.highresdisplay,
 
   basicAnimationSpeed = 700,
 
+  html = $('html'),
+
   windowHeight = $(window).outerHeight(),
 
   captionHeight = $('#single-slider-text').outerHeight(),
@@ -214,6 +216,7 @@ jQuery(document).ready(function () {
     lazyLoadImages('#gallery-overlay-insert .slider-img');
 
     galleryOverlay.show();
+    html.addClass('overlay-active');
 
     Slick.init();
 
@@ -222,6 +225,7 @@ jQuery(document).ready(function () {
 
   $('#gallery-overlay-close').on('click', function() {
     galleryOverlay.hide();
+    html.removeClass('overlay-active');
     $('.js-slick-container').slick('unslick').html('');
   });
 
@@ -234,12 +238,14 @@ jQuery(document).ready(function () {
     $('#video-overlay-insert').html(insert);
 
     videoOverlay.show();
+    html.addClass('overlay-active');
 
     $('body').scrollTop(0);
   });
 
   $('#video-overlay-close').on('click', function() {
     videoOverlay.hide();
+    html.removeClass('overlay-active');
     $('#video-overlay-insert').html('');
   });
 
