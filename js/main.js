@@ -249,6 +249,61 @@ jQuery(document).ready(function () {
     $('#video-overlay-insert').html('');
   });
 
+  // STICKY HEADER & SCROLLTO
+  var $projectHeader = $('#project-header');
+  var $toMenu = $('#scroll-to-menu');
+
+  if ($projectHeader.length) {
+    var projectHeaderOffset = $projectHeader.offset();
+    var projectHeaderTop = projectHeaderOffset.top;
+    var projectHeaderHeight = $projectHeader.outerHeight();
+
+    $('article.project').prepend('<div class="js-header-spacer u-hidden"></div>');
+    var $headerSpacer = $('.js-header-spacer');
+    $headerSpacer.css('height', projectHeaderHeight);
+
+    $(window).on('scroll', function() {
+
+      var scrollTop = $(window).scrollTop();
+      
+      if ($projectHeader.hasClass('u-fixed')) {
+        if (scrollTop <= projectHeaderTop) {
+          $projectHeader.removeClass('u-fixed');
+          $headerSpacer.addClass('u-hidden');
+          $toMenu.addClass('u-hidden');
+        }
+      } else {
+        if (scrollTop >= projectHeaderTop) {
+          $projectHeader.addClass('u-fixed');
+          $headerSpacer.removeClass('u-hidden');
+          $toMenu.removeClass('u-hidden');
+        }
+      }
+      
+    });
+
+  } else {
+
+    var showToMenu = 100;
+
+    $(window).on('scroll', function() {
+      var scrollTop = $(window).scrollTop();
+      if ($toMenu.hasClass('u-hidden')) {
+        if (scrollTop >= showToMenu) {
+          $toMenu.removeClass('u-hidden');
+        }
+      } else {
+        if (scrollTop <= showToMenu) {
+          $toMenu.addClass('u-hidden');
+        }
+      }
+    });
+
+  }
+
+
+
+
   // OTHER
 
   $('.js-project-copy-link').on('click', function() {

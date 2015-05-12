@@ -1079,6 +1079,10 @@ img {
 }
 #project-header {
   padding: 32px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 #project-visuals {
   margin-bottom: 128px;
