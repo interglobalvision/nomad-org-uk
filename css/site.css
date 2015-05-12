@@ -1083,6 +1083,7 @@ img {
   left: 0;
   width: 100%;
   z-index: 10;
+  text-shadow: -1px -1px 0 #fdfdfd, 1px -1px 0 #fdfdfd, -1px 1px 0 #fdfdfd, 1px 1px 0 #fdfdfd;
 }
 #project-visuals {
   margin-bottom: 128px;
