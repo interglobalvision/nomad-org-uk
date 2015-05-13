@@ -189,14 +189,25 @@ jQuery(document).ready(function () {
 
   // VIDEO HOVERS
 
-  $('.project-video').on({
-    'mouseenter': function() {
+  $('.project-video').each( function() {
+    console.log('loading');
+    this.load();
+  });
+
+  $('.project-video').on('durationchange', function() {
+    console.log('loaded');
+    if( $(this).is(":hover") ) {
       this.play();
-    },
-    'mouseleave': function() {
-      this.pause();
-      this.currentTime = 0;
-    },
+    }
+    $(this).on({
+      'mouseenter': function() {
+        this.play();
+      },
+      'mouseleave': function() {
+        this.pause();
+        this.currentTime = 0;
+      },
+    });
   });
 
 
