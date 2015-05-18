@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content" class="inner-container">
+<main id="main-content">
 
 <?php
 if( have_posts() ) {
@@ -15,11 +15,11 @@ if( have_posts() ) {
 ?>
 
     <article <?php post_class(); ?> id="project">
-      <header id="project-header">
+      <header id="project-header" class="inner-container">
         <h1 class="u-align-center"><?php the_title(); ?></h1>
       </header>
 
-      <section id="project-visuals" class="row js-packery-container">
+      <section id="project-visuals" class="inner-container row js-packery-container">
  <?php
   $visuals_index = 0;
   foreach ($visuals[0] as $visual) {
@@ -77,7 +77,7 @@ if( have_posts() ) {
 ?>
       </section>
 
-      <ul id="project-copy-nav">
+      <ul id="project-copy-nav" class="text-container">
 <?php
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
@@ -91,7 +91,7 @@ if( have_posts() ) {
 ?>
       </ul>
 
-      <section id="project-copy">
+      <section id="project-copy" class="text-container">
          <div class="project-copy-section" id="project-copy-main">
           <?php the_content(); ?>
         </div>
