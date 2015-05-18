@@ -13,6 +13,7 @@ var retina = Modernizr.highresdisplay,
   largestImageThreshold = 1400,
 
   margin = 35,
+  slideMargin = 80,
 
   basicAnimationSpeed = 700,
 
@@ -159,7 +160,7 @@ var Slick = {
   },
 
   resizeImages: function() {
-    $('.js-slick-item img').css( 'max-height' , ( windowHeight - captionHeight - margin ) );
+    $('.js-slick-item img').css( 'max-height' , ( windowHeight - captionHeight - (slideMargin * 2) ) );
   }
 };
 
