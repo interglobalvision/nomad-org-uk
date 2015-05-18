@@ -125,7 +125,8 @@ if( have_posts() ) {
 
 <section id="gallery-overlay" class="overlay">
   <nav id="gallery-overlay-close" class="overlay-nav overlay-close u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+    <span class="overlay-close-character">&times;</span>
+    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
   <nav id="gallery-overlay-next" class="overlay-nav overlay-next u-pointer">
     <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/next.svg'); ?>
@@ -139,7 +140,8 @@ if( have_posts() ) {
 
 <section id="video-overlay" class="overlay">
   <nav id="video-overlay-close" class="overlay-nav overlay-close u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+    <span class="overlay-close-character">&times;</span>
+    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
   <div id="video-overlay-caption"></div>
   <div class="u-holder">

@@ -1061,6 +1061,9 @@ img {
   top: 0;
   right: 0;
 }
+.overlay-close-character {
+  font-size: 3em;
+}
 .overlay-next {
   top: 49%;
   right: 0;
@@ -1117,8 +1120,10 @@ img {
 }
 .project-copy-section img {
   float: left;
-  padding: 16px;
+  padding-right: 16px;
 }
 .project-copy-section img.alignright {
   float: right;
+  padding-right: 0;
+  padding-left: 16px;
 }
