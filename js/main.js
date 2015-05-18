@@ -221,7 +221,7 @@ jQuery(document).ready(function () {
 
     Slick.init();
 
-    $('body').scrollTop(0);
+    $('#main-content').ScrollTo();
   });
 
   $('#gallery-overlay-close').on('click', function() {
@@ -241,7 +241,7 @@ jQuery(document).ready(function () {
     videoOverlay.show();
     html.addClass('overlay-active');
 
-    $('body').scrollTop(0);
+    $('#main-content').ScrollTo();
   });
 
   $('#video-overlay-close').on('click', function() {
@@ -319,7 +319,8 @@ jQuery(document).ready(function () {
       $('.js-packery-container').packery({
         itemSelector: '.js-packery-item',
         transitionDuration: '0s',
-        percentPosition: true
+        percentPosition: true,
+        isOriginTop: false
       }).css({
         'opacity': 1
       });

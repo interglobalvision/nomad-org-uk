@@ -40,9 +40,10 @@ for pcol in 1..$pcols
 $gutter = 16px
 
 $margin-small = ($gutter)
-$margin-basic = ($gutter*2)
-$margin-large = ($gutter*5)
-$margin-extra-large = ($gutter*8)
+$margin-tiny = ($gutter / 2)
+$margin-basic = ($gutter * 2)
+$margin-large = ($gutter * 5)
+$margin-extra-large = ($gutter * 8)
 
 $font-size-basic = 16px
 $font-leading-basic = 1.35em
@@ -138,6 +139,7 @@ img
   position: fixed
   top: $margin-basic + 2px
   right: $margin-small
+  z-index: 99
 
 // SEARCH
 
@@ -194,12 +196,17 @@ img
 
 // VISUAL INDEX
 
+// .grid-hover
+//   img
+//     transition: opacity $basic-animation-speed
+//   &:hover
+//     img
+//       opacity: 0.9
+//     .grid-hover-holder
+//       opacity: 1
+
 .grid-hover
-  img
-    transition: opacity $basic-animation-speed
   &:hover
-    img
-      opacity: 0.3
     .grid-hover-holder
       opacity: 1
 
@@ -213,6 +220,7 @@ img
   box-sizing: border-box
   padding: $margin-small
   text-align: center
+  color: $color-white-soft
   opacity: 0
   transition: opacity $basic-animation-speed
 
@@ -273,7 +281,7 @@ img
 // OVERLAY
 
 .overlay
-  position: absolute
+  position: fixed
   background-color: $color-white-soft
   top: 0
   left: 0
@@ -338,6 +346,10 @@ img
 
 #project-visuals
   margin-bottom: $margin-extra-large
+
+.project-visual
+  box-sizing: border-box
+  padding: $margin-tiny
 
 #project-visuals-overlay
   display: none

@@ -917,6 +917,7 @@ img {
   position: fixed;
   top: 34px;
   right: 16px;
+  z-index: 99;
 }
 #tags li {
   display: inline-block;
@@ -965,13 +966,6 @@ img {
 .index-project-title {
   padding: 16px 0;
 }
-.grid-hover img {
-  -webkit-transition: opacity 0.3s;
-          transition: opacity 0.3s;
-}
-.grid-hover:hover img {
-  opacity: 0.3;
-}
 .grid-hover:hover .grid-hover-holder {
   opacity: 1;
 }
@@ -985,6 +979,7 @@ img {
   box-sizing: border-box;
   padding: 16px;
   text-align: center;
+  color: #fdfdfd;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;
@@ -1043,7 +1038,7 @@ img {
   margin: 0 auto;
 }
 .overlay {
-  position: absolute;
+  position: fixed;
   background-color: #fdfdfd;
   top: 0;
   left: 0;
@@ -1103,6 +1098,10 @@ img {
 }
 #project-visuals {
   margin-bottom: 128px;
+}
+.project-visual {
+  box-sizing: border-box;
+  padding: 8px;
 }
 #project-visuals-overlay {
   display: none;
