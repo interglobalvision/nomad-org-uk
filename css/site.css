@@ -950,6 +950,9 @@ img {
 .project-video {
   width: 100%;
 }
+.index-project-title {
+  padding: 16px 0;
+}
 .grid-hover img {
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;
@@ -1015,7 +1018,7 @@ img {
   height: 100%;
   display: block;
   box-sizing: border-box;
-  padding: 32px;
+  padding: 80px;
 }
 .slider-img {
   margin: 0 auto;
