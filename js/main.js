@@ -265,7 +265,7 @@ jQuery(document).ready(function () {
     $(window).on('scroll', function() {
 
       var scrollTop = $(window).scrollTop();
-      
+
       if ($projectHeader.hasClass('u-fixed')) {
         if (scrollTop <= projectHeaderTop) {
           $projectHeader.removeClass('u-fixed');
@@ -279,7 +279,7 @@ jQuery(document).ready(function () {
           $toMenu.removeClass('u-hidden');
         }
       }
-      
+
     });
 
   } else {
