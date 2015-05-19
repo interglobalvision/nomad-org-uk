@@ -26,7 +26,12 @@ if( have_posts() ) {
     if (!empty($visual['video'])) {
       $video = get_post($visual['video']);
       $video_meta = get_post_meta($visual['video']);
-      $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb');
+/*       $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb'); */
+      $img_id = get_post_thumbnail_id($visual['video']);
+
+      $img = wp_get_attachment_image_src($img_id, 'grid-basic');
+      $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
+      $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>">
           <div class="grid-hover-holder">
@@ -36,7 +41,11 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
-          <img src="<?php echo $thumbnail[0]; ?>" />
+<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
+          <img class="js-grid-img"
+            data-basic="<?php echo $img[0]; ?>"
+            data-large="<?php echo $imgLarge[0]; ?>"
+            data-largest="<?php echo $imgLargest[0]; ?>" />
         </div>
 <?php
     } else {

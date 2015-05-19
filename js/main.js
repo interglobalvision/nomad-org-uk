@@ -205,6 +205,7 @@ jQuery(document).ready(function () {
 
   if ($('body').hasClass('single-project')) {
     $('#main-content').ScrollTo();
+    lazyLoadImages('.js-grid-img');
   }
 
   // OVERLAY GALLERY
@@ -301,9 +302,6 @@ jQuery(document).ready(function () {
     });
 
   }
-
-
-
 
   // OTHER
 
