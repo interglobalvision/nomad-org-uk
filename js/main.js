@@ -20,6 +20,7 @@ var retina = Modernizr.highresdisplay,
   html = $('html'),
 
   windowHeight = $(window).outerHeight(),
+  windowWidth = $(window).width()
 
   captionHeight = $('#single-slider-text').outerHeight(),
 
@@ -31,10 +32,11 @@ var retina = Modernizr.highresdisplay,
   // LAZY IMAGES
 
 function lazyLoadImages(selector) {
+  windowWidth = $(window).width();
+
   $(selector).each(function() {
     var $this = $(this);
     var data = $this.data();
-    var windowWidth = $(window).width();
 
     if (retina) {
       if (windowWidth > (largeImageThreshold * 1.5)) {
@@ -52,11 +54,14 @@ function lazyLoadImages(selector) {
   });
 }
 
+// what does this function do?!
+
 function slickLazyLoad(selector) {
+  windowWidth = $(window).width();
+
   $(selector).each(function() {
     var $this = $(this);
     var data = $this.data();
-    var windowWidth = $(window).width();
 
     if (retina) {
       if (windowWidth > (largeImageThreshold * 1.5)) {

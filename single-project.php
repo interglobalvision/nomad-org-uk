@@ -44,8 +44,8 @@ if( have_posts() ) {
 <!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
-            data-large="<?php echo $imgLarge[0]; ?>"
-            data-largest="<?php echo $imgLargest[0]; ?>" />
+            data-large="<?php echo $img_large[0]; ?>"
+            data-largest="<?php echo $img_largest[0]; ?>" />
         </div>
 <?php
     } else {
@@ -67,8 +67,8 @@ if( have_posts() ) {
 <!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
-            data-large="<?php echo $imgLarge[0]; ?>"
-            data-largest="<?php echo $imgLargest[0]; ?>" />
+            data-large="<?php echo $img_large[0]; ?>"
+            data-largest="<?php echo $img_largest[0]; ?>" />
         </div>
 <?php
     }
