@@ -49,7 +49,12 @@ if( have_posts() ) {
         </div>
 <?php
     } else {
-      $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
+/*       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb'); */
+      $img_id = $visual['thumbnail_id'];
+
+      $img = wp_get_attachment_image_src($img_id, 'grid-basic');
+      $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
+      $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
           <div class="grid-hover-holder">
@@ -59,7 +64,11 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
-          <img src="<?php echo $thumbnail[0]; ?>" />
+<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
+          <img class="js-grid-img"
+            data-basic="<?php echo $img[0]; ?>"
+            data-large="<?php echo $imgLarge[0]; ?>"
+            data-largest="<?php echo $imgLargest[0]; ?>" />
         </div>
 <?php
     }
