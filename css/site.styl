@@ -3,17 +3,29 @@
 @import "helpers"
 @import "slick"
 
+.header-container
+  margin: 0 auto
+  max-width: 2280px
+  min-width: 315px
+  width: 95%
+
 .container
   margin: 0 auto
   max-width: 1920px
   min-width: 315px
-  width: 90%
+  width: 80%
 
 .inner-container
   margin: 0 auto
-  max-width: 1080px
+  max-width: 1680px
   min-width: 310px
-  width: 55%
+  width: 70%
+
+.text-container
+  margin: 0 auto
+  max-width: 1440px
+  min-width: 310px
+  width: 60%
 
 .percent-col
   float: left
@@ -28,9 +40,10 @@ for pcol in 1..$pcols
 $gutter = 16px
 
 $margin-small = ($gutter)
-$margin-basic = ($gutter*2)
-$margin-large = ($gutter*5)
-$margin-extra-large = ($gutter*8)
+$margin-tiny = ($gutter / 2)
+$margin-basic = ($gutter * 2)
+$margin-large = ($gutter * 5)
+$margin-extra-large = ($gutter * 8)
 
 $font-size-basic = 16px
 $font-leading-basic = 1.35em
@@ -54,6 +67,7 @@ body
   font-size: $font-size-basic
   line-height: $font-leading-basic
   letter-spacing: $font-tracking-basic
+  font-weight: normal !important
 
 h1
   font-size: $font-size-heading
@@ -125,6 +139,7 @@ img
   position: fixed
   top: $margin-basic + 2px
   right: $margin-small
+  z-index: 99
 
 // SEARCH
 
@@ -175,15 +190,23 @@ img
 .project-video
   width: 100%
 
+.index-project-title
+  padding: $margin-small 0
+
 
 // VISUAL INDEX
 
+// .grid-hover
+//   img
+//     transition: opacity $basic-animation-speed
+//   &:hover
+//     img
+//       opacity: 0.9
+//     .grid-hover-holder
+//       opacity: 1
+
 .grid-hover
-  img
-    transition: opacity $basic-animation-speed
   &:hover
-    img
-      opacity: 0.3
     .grid-hover-holder
       opacity: 1
 
@@ -197,6 +220,7 @@ img
   box-sizing: border-box
   padding: $margin-small
   text-align: center
+  color: $color-white-soft
   opacity: 0
   transition: opacity $basic-animation-speed
 
@@ -241,7 +265,7 @@ img
   height: 100%
   display: block
   box-sizing: border-box
-  padding: $margin-basic
+  padding: $margin-large
 
 .slider-img
   margin: 0 auto
@@ -257,7 +281,7 @@ img
 // OVERLAY
 
 .overlay
-  position: absolute
+  position: fixed
   background-color: $color-white-soft
   top: 0
   left: 0
@@ -278,6 +302,9 @@ img
 .overlay-close
   top: 0
   right: 0
+
+.overlay-close-character
+  font-size: 3em
 
 .overlay-next
   top: 49%
@@ -323,6 +350,10 @@ img
 #project-visuals
   margin-bottom: $margin-extra-large
 
+.project-visual
+  box-sizing: border-box
+  padding: $margin-tiny
+
 #project-visuals-overlay
   display: none
 
@@ -335,9 +366,11 @@ img
   margin-bottom: $margin-large
   img
     float: left
-    padding: $margin-small
+    padding-right: $margin-small
     &.alignright
       float: right
+      padding-right: 0
+      padding-left: $margin-small
 
 
 // MEDIA QUERIES

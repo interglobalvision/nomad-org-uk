@@ -772,17 +772,29 @@ ul.u-inline-list li {
   height: auto;
   border: 1px solid transparent;
 }
+.header-container {
+  margin: 0 auto;
+  max-width: 2280px;
+  min-width: 315px;
+  width: 95%;
+}
 .container {
   margin: 0 auto;
   max-width: 1920px;
   min-width: 315px;
-  width: 90%;
+  width: 80%;
 }
 .inner-container {
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1680px;
   min-width: 310px;
-  width: 55%;
+  width: 70%;
+}
+.text-container {
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 310px;
+  width: 60%;
 }
 .percent-col {
   float: left;
@@ -823,6 +835,7 @@ body {
   font-size: 16px;
   line-height: 1.35em;
   letter-spacing: 0.001em;
+  font-weight: normal !important;
 }
 h1 {
   font-size: 40px;
@@ -904,6 +917,7 @@ img {
   position: fixed;
   top: 34px;
   right: 16px;
+  z-index: 99;
 }
 #tags li {
   display: inline-block;
@@ -949,12 +963,8 @@ img {
 .project-video {
   width: 100%;
 }
-.grid-hover img {
-  -webkit-transition: opacity 0.3s;
-          transition: opacity 0.3s;
-}
-.grid-hover:hover img {
-  opacity: 0.3;
+.index-project-title {
+  padding: 16px 0;
 }
 .grid-hover:hover .grid-hover-holder {
   opacity: 1;
@@ -969,6 +979,7 @@ img {
   box-sizing: border-box;
   padding: 16px;
   text-align: center;
+  color: #fdfdfd;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;
@@ -1014,7 +1025,7 @@ img {
   height: 100%;
   display: block;
   box-sizing: border-box;
-  padding: 32px;
+  padding: 80px;
 }
 .slider-img {
   margin: 0 auto;
@@ -1027,7 +1038,7 @@ img {
   margin: 0 auto;
 }
 .overlay {
-  position: absolute;
+  position: fixed;
   background-color: #fdfdfd;
   top: 0;
   left: 0;
@@ -1049,6 +1060,9 @@ img {
 .overlay-close {
   top: 0;
   right: 0;
+}
+.overlay-close-character {
+  font-size: 3em;
 }
 .overlay-next {
   top: 49%;
@@ -1088,6 +1102,10 @@ img {
 #project-visuals {
   margin-bottom: 128px;
 }
+.project-visual {
+  box-sizing: border-box;
+  padding: 8px;
+}
 #project-visuals-overlay {
   display: none;
 }
@@ -1102,8 +1120,10 @@ img {
 }
 .project-copy-section img {
   float: left;
-  padding: 16px;
+  padding-right: 16px;
 }
 .project-copy-section img.alignright {
   float: right;
+  padding-right: 0;
+  padding-left: 16px;
 }

@@ -13,12 +13,14 @@ var retina = Modernizr.highresdisplay,
   largestImageThreshold = 1400,
 
   margin = 35,
+  slideMargin = 80,
 
   basicAnimationSpeed = 700,
 
   html = $('html'),
 
   windowHeight = $(window).outerHeight(),
+  windowWidth = $(window).width()
 
   captionHeight = $('#single-slider-text').outerHeight(),
 
@@ -30,10 +32,11 @@ var retina = Modernizr.highresdisplay,
   // LAZY IMAGES
 
 function lazyLoadImages(selector) {
+  windowWidth = $(window).width();
+
   $(selector).each(function() {
     var $this = $(this);
     var data = $this.data();
-    var windowWidth = $(window).width();
 
     if (retina) {
       if (windowWidth > (largeImageThreshold * 1.5)) {
@@ -51,11 +54,14 @@ function lazyLoadImages(selector) {
   });
 }
 
+// what does this function do?!
+
 function slickLazyLoad(selector) {
+  windowWidth = $(window).width();
+
   $(selector).each(function() {
     var $this = $(this);
     var data = $this.data();
-    var windowWidth = $(window).width();
 
     if (retina) {
       if (windowWidth > (largeImageThreshold * 1.5)) {
@@ -159,7 +165,7 @@ var Slick = {
   },
 
   resizeImages: function() {
-    $('.js-slick-item img').css( 'max-height' , ( windowHeight - captionHeight - margin ) );
+    $('.js-slick-item img').css( 'max-height' , ( windowHeight - captionHeight - (slideMargin * 2) ) );
   }
 };
 
@@ -215,6 +221,7 @@ jQuery(document).ready(function () {
 
   if ($('body').hasClass('single-project')) {
     $('#main-content').ScrollTo();
+    lazyLoadImages('.js-grid-img');
   }
 
   // OVERLAY GALLERY
@@ -231,7 +238,7 @@ jQuery(document).ready(function () {
 
     Slick.init();
 
-    $('body').scrollTop(0);
+    $('#main-content').ScrollTo();
   });
 
   $('#gallery-overlay-close').on('click', function() {
@@ -251,7 +258,7 @@ jQuery(document).ready(function () {
     videoOverlay.show();
     html.addClass('overlay-active');
 
-    $('body').scrollTop(0);
+    $('#main-content').ScrollTo();
   });
 
   $('#video-overlay-close').on('click', function() {
@@ -276,7 +283,7 @@ jQuery(document).ready(function () {
     $(window).on('scroll', function() {
 
       var scrollTop = $(window).scrollTop();
-      
+
       if ($projectHeader.hasClass('u-fixed')) {
         if (scrollTop <= projectHeaderTop) {
           $projectHeader.removeClass('u-fixed');
@@ -290,7 +297,7 @@ jQuery(document).ready(function () {
           $toMenu.removeClass('u-hidden');
         }
       }
-      
+
     });
 
   } else {
@@ -312,9 +319,6 @@ jQuery(document).ready(function () {
 
   }
 
-
-
-
   // OTHER
 
   $('.js-project-copy-link').on('click', function() {
@@ -329,7 +333,8 @@ jQuery(document).ready(function () {
       $('.js-packery-container').packery({
         itemSelector: '.js-packery-item',
         transitionDuration: '0s',
-        percentPosition: true
+        percentPosition: true,
+        isOriginTop: false
       }).css({
         'opacity': 1
       });

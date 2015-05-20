@@ -49,7 +49,7 @@
 </nav>
 
 
-<header id="header" class="container">
+<header id="header" class="header-container">
   <div class="row">
     <div class="col percent-col into-2">
       <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>

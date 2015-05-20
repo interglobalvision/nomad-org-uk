@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content" class="inner-container">
+<main id="main-content">
 
 <?php
 if( have_posts() ) {
@@ -15,18 +15,23 @@ if( have_posts() ) {
 ?>
 
     <article <?php post_class(); ?> id="project">
-      <header id="project-header">
+      <header id="project-header" class="inner-container">
         <h1 class="u-align-center"><?php the_title(); ?></h1>
       </header>
 
-      <section id="project-visuals" class="row js-packery-container">
+      <section id="project-visuals" class="inner-container row js-packery-container">
  <?php
   $visuals_index = 0;
   foreach ($visuals[0] as $visual) {
     if (!empty($visual['video'])) {
       $video = get_post($visual['video']);
       $video_meta = get_post_meta($visual['video']);
-      $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb');
+/*       $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb'); */
+      $img_id = get_post_thumbnail_id($visual['video']);
+
+      $img = wp_get_attachment_image_src($img_id, 'grid-basic');
+      $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
+      $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>">
           <div class="grid-hover-holder">
@@ -36,11 +41,20 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
-          <img src="<?php echo $thumbnail[0]; ?>" />
+<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
+          <img class="js-grid-img"
+            data-basic="<?php echo $img[0]; ?>"
+            data-large="<?php echo $img_large[0]; ?>"
+            data-largest="<?php echo $img_largest[0]; ?>" />
         </div>
 <?php
     } else {
-      $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb');
+/*       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb'); */
+      $img_id = $visual['thumbnail_id'];
+
+      $img = wp_get_attachment_image_src($img_id, 'grid-basic');
+      $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
+      $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
           <div class="grid-hover-holder">
@@ -50,7 +64,11 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
-          <img src="<?php echo $thumbnail[0]; ?>" />
+<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
+          <img class="js-grid-img"
+            data-basic="<?php echo $img[0]; ?>"
+            data-large="<?php echo $img_large[0]; ?>"
+            data-largest="<?php echo $img_largest[0]; ?>" />
         </div>
 <?php
     }
@@ -77,7 +95,7 @@ if( have_posts() ) {
 ?>
       </section>
 
-      <ul id="project-copy-nav">
+      <ul id="project-copy-nav" class="text-container">
 <?php
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
@@ -91,7 +109,7 @@ if( have_posts() ) {
 ?>
       </ul>
 
-      <section id="project-copy">
+      <section id="project-copy" class="text-container">
          <div class="project-copy-section" id="project-copy-main">
           <?php the_content(); ?>
         </div>
@@ -125,7 +143,8 @@ if( have_posts() ) {
 
 <section id="gallery-overlay" class="overlay">
   <nav id="gallery-overlay-close" class="overlay-nav overlay-close u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+    <span class="overlay-close-character">&times;</span>
+    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
   <nav id="gallery-overlay-next" class="overlay-nav overlay-next u-pointer">
     <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/next.svg'); ?>
@@ -139,7 +158,8 @@ if( have_posts() ) {
 
 <section id="video-overlay" class="overlay">
   <nav id="video-overlay-close" class="overlay-nav overlay-close u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); ?>
+    <span class="overlay-close-character">&times;</span>
+    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
   <div id="video-overlay-caption"></div>
   <div class="u-holder">
