@@ -876,6 +876,9 @@ b,
 .font-uppercase {
   text-transform: uppercase;
 }
+.font-caption {
+  font-size: 12px;
+}
 a,
 a:active,
 a:visited,
@@ -1071,6 +1074,14 @@ img {
 .overlay-previous {
   top: 49%;
   left: 0;
+}
+.overlay-caption-holder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
 }
 #video-overlay .u-holder {
   position: absolute;

@@ -20,7 +20,7 @@ var retina = Modernizr.highresdisplay,
   html = $('html'),
 
   windowHeight = $(window).outerHeight(),
-  windowWidth = $(window).width()
+  windowWidth = $(window).width(),
 
   captionHeight = $('#single-slider-text').outerHeight(),
 
@@ -126,7 +126,7 @@ var Slick = {
       init: function(event, slick){
         //var currentSlideIndex = $('.slick-active').attr('data-slick-index');
         // set caption
-        //_this.replaceCaption(currentSlideIndex);
+        _this.replaceCaptions(0);
 
         // set length for n of * in captions
         //$('#slick-length').html($('.js-slick-item').length-2);
@@ -137,14 +137,14 @@ var Slick = {
         // fade in when ready
         $('#single-slider').css( 'opacity' , 1 );
         //$('#single-slider-text').css( 'opacity' , 1 );
-      }/*,
+      },
       afterChange: function(event, slick, currentSlide, nextSlide){
         // set caption
-        //_this.replaceCaption(currentSlide);
+        _this.replaceCaptions(currentSlide);
 
         // set active index in human readable form
         //$('#slick-current-index').html(currentSlide+1);
-      }*/
+      }
     }).slick({
       prevArrow: $('#gallery-overlay-previous'),
       nextArrow: $('#gallery-overlay-next'),
@@ -155,13 +155,23 @@ var Slick = {
     });
   },
 
-  replaceCaption: function(currentSlide) {
-    var caption = $('[data-slick-index="' + currentSlide + '"]').data('caption');
+  replaceCaptions: function(currentSlide) {
+    var data = $('[data-slick-index="' + currentSlide + '"]').data();
+    var caption = data.caption;
+    var title = data.title;
+
     if (! caption || caption === undefined || caption === null) {
-      $('#slick-caption').html(' ');
+      $('#gallery-overlay-caption').html(' ');
     } else {
-      $('#slick-caption').html(caption);
+      $('#gallery-overlay-caption').html(', ' + caption);
     }
+
+    if (! title || title === undefined || title === null) {
+      $('#gallery-overlay-title').html(' ');
+    } else {
+      $('#gallery-overlay-title').html(title);
+    }
+
   },
 
   resizeImages: function() {
@@ -254,6 +264,7 @@ jQuery(document).ready(function () {
     var insert = '<iframe id="overlay-video-player" src="//player.vimeo.com/video/' + vimeo.vimeo + '?portrait=0&badge=0&byline=0&title=0&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
     $('#video-overlay-insert').html(insert);
+    $('#video-overlay-title').html(vimeo.title);
 
     videoOverlay.show();
     html.addClass('overlay-active');

@@ -64,17 +64,19 @@ function my_gallery_shortcode($attr) {
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
 
+  	$title = $attachment->post_title;
+
 		$img = wp_get_attachment_image_src($id, 'gallery-basic');
 		$imgLarge = wp_get_attachment_image_src($id, 'gallery-large');
 		$imgLargest = wp_get_attachment_image_src($id, 'gallery-largest');
 
 		if ( trim($attachment->post_excerpt) ) {
-			$caption = ' data-caption="'.wptexturize($attachment->post_excerpt).'"';
+			$caption = wptexturize($attachment->post_excerpt);
 		} else {
 			$caption = null;
 		}
 
-		$output .= '<div class="js-slick-item slider-item"'.$caption.'><div class="u-holder"><div class="u-held"><img class="slider-img" data-basic="'.$img[0].'" data-large="'.$imgLarge[0].'" data-largest="'.$imgLargest[0].'" /></div></div></div>';
+		$output .= '<div class="js-slick-item slider-item" data-title="' . $title . '" data-caption="' . $caption . '"><div class="u-holder"><div class="u-held"><img class="slider-img" data-basic="' . $img[0] . '" data-large="' . $imgLarge[0] . '" data-largest="' . $imgLargest[0] . '" /></div></div></div>';
 	}
 
 	return $output;

@@ -26,22 +26,24 @@ if( have_posts() ) {
     if (!empty($visual['video'])) {
       $video = get_post($visual['video']);
       $video_meta = get_post_meta($visual['video']);
-/*       $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($visual['video']), 'project-thumb'); */
       $img_id = get_post_thumbnail_id($visual['video']);
 
       $img = wp_get_attachment_image_src($img_id, 'grid-basic');
       $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
       $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
-        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo" data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>" data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>">
+        <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo"
+          data-vimeo="<?php echo $video_meta['_vimeo_id_value'][0]; ?>"
+          data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>"
+          data-title="<?php echo $video->post_title; ?>"
+          >
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held">
-                <h4><?php echo $video->post_title;; ?></h4>
+                <h4><?php echo $video->post_title; ?></h4>
               </div>
             </div>
           </div>
-<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
             data-large="<?php echo $img_large[0]; ?>"
@@ -49,7 +51,6 @@ if( have_posts() ) {
         </div>
 <?php
     } else {
-/*       $thumbnail = wp_get_attachment_image_src($visual['thumbnail_id'], 'project-thumb'); */
       $img_id = $visual['thumbnail_id'];
 
       $img = wp_get_attachment_image_src($img_id, 'grid-basic');
@@ -64,7 +65,6 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
-<!--           <img src="<?php echo $thumbnail[0]; ?>" /> -->
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
             data-large="<?php echo $img_large[0]; ?>"
@@ -144,24 +144,30 @@ if( have_posts() ) {
 <section id="gallery-overlay" class="overlay">
   <nav id="gallery-overlay-close" class="overlay-nav overlay-close u-pointer">
     <span class="overlay-close-character">&times;</span>
-    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
-  <nav id="gallery-overlay-next" class="overlay-nav overlay-next u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/next.svg'); ?>
-  </nav>
-  <nav id="gallery-overlay-previous" class="overlay-nav overlay-previous u-pointer">
-    <?php echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/prev.svg'); ?>
-  </nav>
-  <div id="gallery-overlay-caption"></div>
+  <div class="overlay-caption-holder row font-caption">
+    <div class="percent-col into-2">
+      <?php the_title(); ?>
+    </div>
+    <div class="percent-col into-2 u-align-right">
+      <span id="gallery-overlay-title" class="font-italic"></span><span id="gallery-overlay-caption"></span>
+    </div>
+  </div>
   <div id="gallery-overlay-insert" class="js-slick-container"></div>
 </section>
 
 <section id="video-overlay" class="overlay">
   <nav id="video-overlay-close" class="overlay-nav overlay-close u-pointer">
     <span class="overlay-close-character">&times;</span>
-    <?php /* echo url_get_contents(get_bloginfo('stylesheet_directory') . '/img/close.svg'); */ ?>
   </nav>
-  <div id="video-overlay-caption"></div>
+  <div class="overlay-caption-holder row font-caption">
+    <div class="percent-col into-2">
+      <?php the_title(); ?>
+    </div>
+    <div class="percent-col into-2 u-align-right">
+      <span id="video-overlay-title" class="font-italic"></span>
+    </div>
+  </div>
   <div class="u-holder">
     <div class="u-held">
       <div id="video-overlay-insert" class="vimeo-wrapper">
