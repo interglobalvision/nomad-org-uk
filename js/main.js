@@ -157,7 +157,10 @@ var Slick = {
 
   replaceCaptions: function(currentSlide) {
     var data = $('[data-slick-index="' + currentSlide + '"]').data();
-    var caption = data.caption;
+    var caption;
+    if (! data.caption || data.caption === undefined || data.caption === null) {
+      caption = data.caption;
+    }
     var title = data.title;
 
     if (! caption || caption === undefined || caption === null) {
