@@ -1086,13 +1086,14 @@ img {
 #video-overlay .u-holder {
   position: absolute;
   top: 0;
-  width: 90%;
-  left: 5%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px;
 }
 .vimeo-wrapper {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 25px;
   height: 0;
 }
 .vimeo-wrapper iframe {
