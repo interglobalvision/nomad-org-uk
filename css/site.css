@@ -833,7 +833,7 @@ ul.u-inline-list li {
 body {
   font-family: 'Cinetype-Regular', helvetica, arial, sans-serif;
   font-size: 16px;
-  line-height: 1.35em;
+  line-height: 1.45em;
   letter-spacing: 0.001em;
   font-weight: normal !important;
 }
@@ -857,7 +857,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.35em;
+  line-height: 1.45em;
 }
 p {
   margin-bottom: 1em;
@@ -907,6 +907,18 @@ img {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
           transition: opacity 0.3s;
+}
+.u-pad-basic {
+  box-sizing: border-box;
+  padding: 32px;
+}
+.u-pad-small {
+  box-sizing: border-box;
+  padding: 16px;
+}
+.u-pad-tiny {
+  box-sizing: border-box;
+  padding: 8px;
 }
 #header {
   margin-top: 32px;
@@ -1138,4 +1150,8 @@ img {
   float: right;
   padding-right: 0;
   padding-left: 16px;
+}
+.project-copy-section-title {
+  padding-top: 32px;
+  padding-bottom: 16px;
 }

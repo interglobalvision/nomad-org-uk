@@ -39,7 +39,7 @@ if( have_posts() ) {
           >
           <div class="grid-hover-holder">
             <div class="u-holder">
-              <div class="u-held">
+              <div class="u-held u-pad-small">
                 <h4><?php echo $video->post_title; ?></h4>
               </div>
             </div>
@@ -60,7 +60,7 @@ if( have_posts() ) {
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
           <div class="grid-hover-holder">
             <div class="u-holder">
-              <div class="u-held">
+              <div class="u-held u-pad-small">
                 <h4><?php if (!empty($visual['title'])) {echo $visual['title'];} ?></h4>
               </div>
             </div>
@@ -118,7 +118,7 @@ if( have_posts() ) {
   foreach ($copy[0] as $copy_section) {
 ?>
         <div class="project-copy-section" id="project-copy-<?php echo $project_copy_index; ?>">
-          <h4 class="font-uppercase"><?php echo $copy_section['title']; ?></h4>
+          <h4 class="project-copy-section-title font-uppercase"><?php echo $copy_section['title']; ?></h4>
           <?php echo wpautop($copy_section['copy']); ?>
         </div>
 <?php

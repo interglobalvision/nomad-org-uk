@@ -46,7 +46,7 @@ $margin-large = ($gutter * 5)
 $margin-extra-large = ($gutter * 8)
 
 $font-size-basic = 16px
-$font-leading-basic = 1.35em
+$font-leading-basic = 1.45em
 $font-tracking-basic = 0.001em
 
 $font-size-heading = 40px
@@ -126,6 +126,17 @@ img
   opacity: 0
   transition: opacity $basic-animation-speed
 
+.u-pad-basic
+  box-sizing: border-box
+  padding: $margin-basic
+
+.u-pad-small
+  box-sizing: border-box
+  padding: $margin-small
+
+.u-pad-tiny
+  box-sizing: border-box
+  padding: $margin-tiny
 
 // HEADER
 
@@ -383,6 +394,10 @@ img
       float: right
       padding-right: 0
       padding-left: $margin-small
+
+.project-copy-section-title
+  padding-top: $margin-basic
+  padding-bottom: $margin-small
 
 
 // MEDIA QUERIES
