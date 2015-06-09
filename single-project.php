@@ -30,6 +30,7 @@ if( have_posts() ) {
 
       $img = wp_get_attachment_image_src($img_id, 'grid-basic');
       $img_large = wp_get_attachment_image_src($img_id, 'grid-large');
+      $img_larger = wp_get_attachment_image_src($img_id, 'grid-larger');
       $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-vimeo"
@@ -47,6 +48,7 @@ if( have_posts() ) {
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
             data-large="<?php echo $img_large[0]; ?>"
+            data-larger="<?php echo $img_larger[0]; ?>"
             data-largest="<?php echo $img_largest[0]; ?>" />
         </div>
 <?php

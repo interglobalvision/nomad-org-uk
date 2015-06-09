@@ -9,8 +9,9 @@ function l(data) {
 // VARS
 
 var retina = Modernizr.highresdisplay,
-  largeImageThreshold = 800,
-  largestImageThreshold = 1400,
+  largeImageThreshold = 1100,
+  largerImageThreshold = 1600,
+  largestImageThreshold = 2000,
 
   margin = 35,
   slideMargin = 80,
@@ -32,50 +33,35 @@ var retina = Modernizr.highresdisplay,
   // LAZY IMAGES
 
 function lazyLoadImages(selector) {
-  windowWidth = $(window).width();
-
   $(selector).each(function() {
     var $this = $(this);
     var data = $this.data();
 
     if (retina) {
-      if (windowWidth > (largeImageThreshold * 1.5)) {
+      if (windowWidth > largerImageThreshold) {
         $this.attr('src', data.largest);
       } else {
         $this.attr('src', data.large);
       }
+
     } else if (windowWidth > largestImageThreshold) {
       $this.attr('src', data.largest);
+    } else if (windowWidth > largerImageThreshold) {
+      $this.attr('src', data.larger);
     } else if (windowWidth > largeImageThreshold) {
       $this.attr('src', data.large);
     } else {
       $this.attr('src', data.basic);
     }
-  });
-}
 
-// what does this function do?!
+    $this.imagesLoaded(function() {
+      this.images[0].img.className += ' img-loaded';
 
-function slickLazyLoad(selector) {
-  windowWidth = $(window).width();
-
-  $(selector).each(function() {
-    var $this = $(this);
-    var data = $this.data();
-
-    if (retina) {
-      if (windowWidth > (largeImageThreshold * 1.5)) {
-        $this.attr('data-lazy', data.largest);
-      } else {
-        $this.attr('data-lazy', data.large);
+      if ( $('.js-packery-container').length ) {
+        $('.js-packery-container').packery();
       }
-    } else if (windowWidth > largestImageThreshold) {
-      $this.attr('data-lazy', data.largest);
-    } else if (windowWidth > largeImageThreshold) {
-      $this.attr('data-lazy', data.large);
-    } else {
-      $this.attr('data-lazy', data.basic);
-    }
+    });
+
   });
 }
 
