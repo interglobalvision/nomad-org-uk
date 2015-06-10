@@ -1153,3 +1153,6 @@ img {
   padding-top: 32px;
   padding-bottom: 16px;
 }
+footer#footer {
+  min-height: 32px;
+}
