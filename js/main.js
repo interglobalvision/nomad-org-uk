@@ -30,10 +30,10 @@ var retina = Modernizr.highresdisplay,
 
   slickItemWidth,
   slickItemPadding,
-  
+
   videoWidth,
   videoHeight,
-  videoPadding
+  videoPadding,
   videoAreaHeight,
   videoAreaWidth;
 
@@ -243,8 +243,8 @@ jQuery(document).ready(function () {
 
   var resizeVideo = function() {
     videoPadding = parseInt($('.js-video-holder').css('padding-top'));
-    var videoAreaHeight = ( windowHeight - ( videoPadding * 2 ) );
-    var videoAreaWidth = ( windowWidth - ( videoPadding * 2 ) );
+    videoAreaHeight = ( windowHeight - ( videoPadding * 2 ) );
+    videoAreaWidth = ( windowWidth - ( videoPadding * 2 ) );
 
     videoHeight = videoAreaWidth * 0.5625;
     videoWidth = videoAreaHeight * 1.7777;
@@ -259,8 +259,6 @@ jQuery(document).ready(function () {
       videoHeight = videoAreaWidth * 0.5625;
     }
 
-    console.log(videoHeight);
-    console.log(videoWidth);
     $('#overlay-video-player').css({
       'height': videoHeight,
       'width': videoWidth,
