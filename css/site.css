@@ -916,7 +916,7 @@ img {
   padding: 8px;
 }
 #header {
-  margin-top: 32px;
+  margin-top: 16px;
   margin-bottom: 32px;
 }
 #menu li {
@@ -925,7 +925,7 @@ img {
 }
 #scroll-to-menu {
   position: fixed;
-  top: 34px;
+  top: 18px;
   right: 16px;
   z-index: 99;
 }
@@ -1136,6 +1136,9 @@ img {
 }
 #project-copy-nav li {
   list-style: none;
+}
+#project-copy-nav h4 {
+  font-weight: normal;
 }
 .project-copy-section {
   margin-bottom: 80px;
