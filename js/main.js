@@ -28,6 +28,7 @@ var retina = Modernizr.highresdisplay,
   galleryOverlay = $('#gallery-overlay'),
   videoOverlay = $('#video-overlay');
 
+
 // FUNCTIONS
 
   // LAZY IMAGES
@@ -80,27 +81,6 @@ function singleLayout() {
 
 if ($('body').hasClass('single')) {
   singleLayout();
-}
-
-  // RESIZE
-
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
-      }
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) {
-      func.apply(context, args);
-    }
-  };
 }
 
   // SLICK
@@ -179,6 +159,7 @@ jQuery(document).ready(function () {
   });
 
 // INDEX
+
   $('.js-post-toggle').on('click', function() {
     var $this = $(this);
     var $copy = $this.parent().find('.post-copy');
@@ -195,12 +176,10 @@ jQuery(document).ready(function () {
   // VIDEO HOVERS
 
   $('.project-video').each( function() {
-    console.log('loading');
     this.load();
   });
 
   $('.project-video').on('durationchange', function() {
-    console.log('loaded');
     if( $(this).is(":hover") ) {
       this.play();
     }
@@ -214,7 +193,6 @@ jQuery(document).ready(function () {
       },
     });
   });
-
 
 // SINGLE PROJECT
 
@@ -328,20 +306,15 @@ jQuery(document).ready(function () {
 
 
 // PACKERY
+
   if ( $('.js-packery-container').length ) {
-    $('.js-packery-container').imagesLoaded( function() {
-      $('.js-packery-container').packery({
+    $('.js-packery-container').packery({
         itemSelector: '.js-packery-item',
         transitionDuration: '0s',
         percentPosition: true,
         isOriginTop: false
-      }).css({
-        'opacity': 1
-      });
     });
   }
-
-
 
   $(window).on('resize', function() {
     Slick.resizeImages();

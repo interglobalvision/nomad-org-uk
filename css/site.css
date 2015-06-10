@@ -903,11 +903,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-.js-packery-container {
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-          transition: opacity 0.3s;
-}
 .u-pad-basic {
   box-sizing: border-box;
   padding: 32px;
@@ -1001,6 +996,19 @@ img {
 }
 .viewer {
   position: relative;
+}
+.js-packery-container {
+  height: 80vh;
+  -webkit-transition: height 0.3s;
+          transition: height 0.3s;
+}
+.js-grid-img {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+}
+.js-grid-img.img-loaded {
+  opacity: 1;
 }
 .single-nav {
   position: absolute;

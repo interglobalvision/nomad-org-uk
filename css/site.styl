@@ -122,10 +122,6 @@ img
   max-width: 100%
   height: auto
 
-.js-packery-container
-  opacity: 0
-  transition: opacity $basic-animation-speed
-
 .u-pad-basic
   box-sizing: border-box
   padding: $margin-basic
@@ -243,6 +239,18 @@ img
 
 .viewer
   position: relative
+
+  // PACKERY
+
+.js-packery-container
+  height: 80vh
+  transition: height $basic-animation-speed
+
+.js-grid-img
+  opacity: 0
+  transition: opacity $basic-animation-speed
+  &.img-loaded
+    opacity: 1
 
   // SLIDER
 
