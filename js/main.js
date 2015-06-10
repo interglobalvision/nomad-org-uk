@@ -29,7 +29,13 @@ var retina = Modernizr.highresdisplay,
   videoOverlay = $('#video-overlay'),
 
   slickItemWidth,
-  slickItemPadding;
+  slickItemPadding,
+  
+  videoWidth,
+  videoHeight,
+  videoPadding
+  videoAreaHeight,
+  videoAreaWidth;
 
 
 // FUNCTIONS
@@ -73,6 +79,7 @@ function lazyLoadImages(selector) {
 
 $(window).resize(function() {
   windowHeight = $(window).outerHeight();
+  windowWidth = $(window).width();
 });
 
 function singleLayout() {
@@ -233,6 +240,33 @@ jQuery(document).ready(function () {
   });
 
   // OVERLAY VIDEO
+
+  var resizeVideo = function() {
+    videoPadding = parseInt($('.js-video-holder').css('padding-top'));
+    var videoAreaHeight = ( windowHeight - ( videoPadding * 2 ) );
+    var videoAreaWidth = ( windowWidth - ( videoPadding * 2 ) );
+
+    videoHeight = videoAreaWidth * 0.5625;
+    videoWidth = videoAreaHeight * 1.7777;
+
+    if (videoHeight > videoAreaHeight) {
+      videoHeight = videoAreaHeight;
+      videoWidth = videoAreaHeight * 1.7777; 
+    }
+
+    if (videoWidth > videoAreaWidth) {
+      videoWidth = videoAreaWidth;
+      videoHeight = videoAreaWidth * 0.5625;
+    }
+
+    console.log(videoHeight);
+    console.log(videoWidth);
+    $('#overlay-video-player').css({
+      'height': videoHeight,
+      'width': videoWidth,
+    });
+  };
+
   $('.js-load-vimeo').on('click', function() {
     var $this = $(this);
     var vimeo = $this.data();
@@ -240,9 +274,11 @@ jQuery(document).ready(function () {
 
     $('#video-overlay-insert').html(insert);
     $('#video-overlay-title').html(vimeo.title);
-
+    
     videoOverlay.show();
     html.addClass('overlay-active');
+
+    resizeVideo();
 
     $('#main-content').ScrollTo();
   });
@@ -252,7 +288,7 @@ jQuery(document).ready(function () {
     html.removeClass('overlay-active');
     $('#video-overlay-insert').html('');
   });
-
+ 
   // STICKY HEADER & SCROLLTO
   var $projectHeader = $('#project-header');
   var $toMenu = $('#scroll-to-menu');
@@ -330,6 +366,7 @@ jQuery(document).ready(function () {
       clearTimeout(window.resizeEvt);
       window.resizeEvt = setTimeout(function() {
         Slick.resizeImages();
+        resizeVideo();
       }, 250);
     });
   });

@@ -170,11 +170,9 @@ if( have_posts() ) {
       <span id="video-overlay-title" class="font-italic"></span>
     </div>
   </div>
-  <div class="u-holder">
-    <div class="u-held">
-      <div id="video-overlay-insert" class="vimeo-wrapper">
+  <div class="u-holder js-video-holder">
+    <div class="u-held" id="video-overlay-insert">
 
-      </div>
     </div>
   </div>
 </section>
