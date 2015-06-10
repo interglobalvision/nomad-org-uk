@@ -47,6 +47,9 @@ function lazyLoadImages(selector) {
     var $this = $(this);
     var data = $this.data();
 
+    l($this);
+    l(data.basic);
+
     if (retina) {
       if (windowWidth > largerImageThreshold) {
         $this.attr('src', data.largest);
@@ -128,7 +131,7 @@ var Slick = {
 
     $('.js-slick-item').on('click', function() {
       $('.js-slick-container').slick('slickNext');
-    }); 
+    });
   },
 
   replaceCaptions: function(currentSlide) {
@@ -160,7 +163,7 @@ var Slick = {
       'max-height' : ( windowHeight - captionHeight - ( slideMargin * 2 ) ),
       'max-width' : ( slickItemWidth - ( slickItemPadding * 2 ) ),
     });
-  }, 
+  },
 };
 
 
@@ -251,7 +254,7 @@ jQuery(document).ready(function () {
 
     if (videoHeight > videoAreaHeight) {
       videoHeight = videoAreaHeight;
-      videoWidth = videoAreaHeight * 1.7777; 
+      videoWidth = videoAreaHeight * 1.7777;
     }
 
     if (videoWidth > videoAreaWidth) {
@@ -272,7 +275,7 @@ jQuery(document).ready(function () {
 
     $('#video-overlay-insert').html(insert);
     $('#video-overlay-title').html(vimeo.title);
-    
+
     videoOverlay.show();
     html.addClass('overlay-active');
 
@@ -286,7 +289,7 @@ jQuery(document).ready(function () {
     html.removeClass('overlay-active');
     $('#video-overlay-insert').html('');
   });
- 
+
   // STICKY HEADER & SCROLLTO
   var $projectHeader = $('#project-header');
   var $toMenu = $('#scroll-to-menu');
