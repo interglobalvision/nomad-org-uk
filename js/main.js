@@ -47,6 +47,9 @@ function lazyLoadImages(selector) {
     var $this = $(this);
     var data = $this.data();
 
+    l(data.larger);
+    l(data.largest);
+
     if (retina) {
       if (windowWidth > largerImageThreshold) {
         $this.attr('src', data.largest);
