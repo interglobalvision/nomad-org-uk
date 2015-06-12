@@ -121,7 +121,7 @@ if( have_posts() ) {
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
 ?>
-        <div class="project-copy-section" id="project-copy-<?php echo $project_copy_index; ?>">
+        <div class="project-copy-section u-cf" id="project-copy-<?php echo $project_copy_index; ?>">
           <h4 class="project-copy-section-title"><?php echo $copy_section['title']; ?></h4>
           <?php echo wpautop($copy_section['copy']); ?>
         </div>
