@@ -18,7 +18,7 @@
 <?php
 if ($webm) {
 ?>
-        <video class="project-video" preload="auto" loop="true" muted="true">
+        <video class="project-video" preload="auto" loop="true" muted="true" <?php if (!empty($img)) {echo 'poster="' . $img[0] . '"';} ?>>
           <source src="<?php echo $webm; ?>" type='video/webm'/>
 <?php if ($mp4) {
 ?>

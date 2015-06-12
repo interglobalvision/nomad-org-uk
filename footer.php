@@ -1,4 +1,6 @@
-  <footer id="footer"></footer>
+  <footer id="footer" class="container font-caption u-align-center">
+     &copy; <?php echo date('Y');?>, NOMAD design by <a href="http://modernactivity.com/" target="_blank">Modern Activity</a>, build by <a href="http://interglobal.vision/" target="_blank">Interglobal Vision</a>
+  </footer>
   <?php get_template_part('partials/scripts'); ?>
 
   <script type="application/ld+json">
