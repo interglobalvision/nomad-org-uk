@@ -10,15 +10,13 @@
   if (!empty($meta['_igv_webm'][0])) {
     $webm = $meta['_igv_webm'][0];
   }
-
-  $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
 ?>
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
       <a href="<?php the_permalink() ?>">
 <?php
 if ($webm) {
 ?>
-        <video class="project-video" preload="auto" loop="true" muted="true" <?php if (!empty($img)) {echo 'poster="' . $img[0] . '"';} ?>>
+        <video class="project-video" preload="auto" loop="true" muted="true">
           <source src="<?php echo $webm; ?>" type='video/webm'/>
 <?php if ($mp4) {
 ?>
