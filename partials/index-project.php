@@ -25,9 +25,12 @@ if ($webm) {
 }
 ?>
         </video>
+        <div class="mobile-or-tablet-thumb">
+          <?php the_post_thumbnail('project-thumb'); ?>
+        </div>
 <?php
 } else {
-  the_post_thumbnail();
+  the_post_thumbnail('project-thumb');
 }
 ?>
         <h2 class="index-project-title"><?php the_title(); ?></h2>

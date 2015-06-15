@@ -30,6 +30,8 @@ if( function_exists( 'add_image_size' ) ) {
 
   add_image_size( 'small', 200, 200, false );
 
+  add_image_size( 'project-thumb', 1000, 9999, false );
+
   add_image_size( 'grid-basic', 350, 9999, false );
   add_image_size( 'grid-large', 500, 9999, false );
   add_image_size( 'grid-larger', 700, 9999, false );

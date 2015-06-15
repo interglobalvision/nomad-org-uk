@@ -986,6 +986,15 @@ img {
 .index-project-title {
   padding: 16px 0;
 }
+.mobile-or-tablet-thumb {
+  display: none;
+}
+.mobile-or-tablet .mobile-or-tablet-thumb {
+  display: block;
+}
+.mobile-or-tablet .project-video {
+  display: none;
+}
 .u-holder {
   -webkit-transition: background-color 0.3s;
           transition: background-color 0.3s;
