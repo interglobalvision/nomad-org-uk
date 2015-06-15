@@ -6,13 +6,13 @@
 .header-container
   margin: 0 auto
   max-width: 2280px
-  min-width: 315px
+  min-width: 310px
   width: 95%
 
 .container
   margin: 0 auto
   max-width: 1920px
-  min-width: 315px
+  min-width: 310px
   width: 80%
 
 .inner-container
@@ -434,7 +434,191 @@ img
 
 // MEDIA QUERIES
 
+@media screen and (max-width: 800px)
+
+  // PULL DOWN GRID
+
+  .percent-col.into-3
+    width: 50%
+
 @media screen and (max-width: 600px)
+
+  // REDECLARE TYPE
+
+  $font-size-basic = 13px
+  $font-leading-basic = 1.45em
+  $font-tracking-basic = 0.001em
+  $font-tracking-large = 0.01em
+
+  $font-size-larger = 17px
+  $font-size-heading = 35px
+  $font-size-subheading = 22px
+  $font-size-caption = 11px
+
+  body
+    font-family: 'Cinetype-Regular', helvetica, arial, sans-serif
+    font-size: $font-size-basic
+    line-height: $font-leading-basic
+    letter-spacing: $font-tracking-basic
+
+  h1
+    font-size: $font-size-heading
+
+  h2, h3
+    font-size: $font-size-subheading
+
+  h4
+    font-size: $font-size-basic
+
+  h5, h6
+    font-size: $font-size-caption
+
+  h1,h2,h3,h4,h5,h6
+    line-height: $font-leading-basic
+    font-weight: normal !important
+
+  .font-caption
+    font-size: $font-size-caption
+
+  .nomad-button
+    a
+      font-size: $font-size-larger
+
+  .single-nav
+    svg
+      width: $font-size-basic
+
+  // REDECLARE MARGINS
+
+  $gutter = 11px
+
+  $margin-small = ($gutter)
+  $margin-tiny = ($gutter / 2)
+  $margin-micro = ($gutter / 4)
+  $margin-basic = ($gutter * 2)
+  $margin-large = ($gutter * 4)
+  $margin-extra-large = ($gutter * 6)
+
+  .u-pad-basic
+    padding: $margin-basic
+
+  .u-pad-small
+    padding: $margin-small
+
+  .u-pad-tiny
+    padding: $margin-tiny
+
+  .nomad-button
+    margin: $margin-basic auto
+    padding: $margin-small
+    a
+      padding: $margin-small
+
+  // HEADER
+
+  #header
+    margin-top: $margin-small
+    margin-bottom: $margin-basic
+
+  #scroll-to-menu
+    top: $margin-small + 2px
+    right: $margin-small
+
+  // INDEX
+
+  .type-post, .type-project
+    margin-bottom: $margin-small
+
+  .post-title
+    padding: $margin-basic
+
+  .post-toggle
+    right: $margin-basic
+
+  .post-copy
+    padding: $margin-small $margin-basic $margin-basic
+
+  // INDEX PROJECTS
+
+  .index-project-title
+    padding: $margin-small 0
+
+  .grid-hover-holder
+    padding: $margin-tiny
+
+  // SINGLE
+
+  // SLIDER
+
+  #single-close
+    top: $margin-small
+    right: $margin-small
+
+  #single-next
+    top: 49%
+    right: $margin-small
+
+  #single-prev
+    top: 49%
+    left: $margin-small
+
+  .slider-item
+    padding: $margin-basic
+
+  // OVERLAY
+
+  .overlay-nav
+    padding: $margin-small
+    svg
+      max-width: $margin-small
+
+  .overlay-caption-holder
+    padding: $margin-small
+
+  // OVERLAY VIDEO
+
+  #video-overlay
+    .u-holder
+      padding: $margin-basic
+
+  // SINGLE PROJECT
+
+  #project-visuals
+    margin-bottom: $margin-extra-large
+
+  .project-visual
+    padding: $margin-tiny
+
+  #project-copy-nav
+    margin-bottom: $margin-large
+    li
+      margin-bottom: $margin-micro
+
+  .project-copy-section
+    margin-bottom: $margin-large
+
+  .project-copy-section-title
+    padding-top: $margin-basic
+    padding-bottom: $margin-tiny
+
+  // PAGE
+
+  #page-copy
+    margin-top: $margin-large
+
+  // FOOTER
+
+  #footer
+    min-height: $margin-basic
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+
+  // PULL DOWN GRID
+
+  .percent-col.into-3
+    width: 100%
+
+  // INLINE IMAGES IN COPY
 
   .project-copy-section
     margin-bottom: $margin-large
