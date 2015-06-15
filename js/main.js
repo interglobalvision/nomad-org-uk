@@ -47,9 +47,6 @@ function lazyLoadImages(selector) {
     var $this = $(this);
     var data = $this.data();
 
-    l(data.larger);
-    l(data.largest);
-
     if (retina) {
       if (windowWidth > largerImageThreshold) {
         $this.attr('src', data.largest);
@@ -137,7 +134,7 @@ var Slick = {
   replaceCaptions: function(currentSlide) {
     var data = $('[data-slick-index="' + currentSlide + '"]').data();
     var caption;
-    if (data.caption || data.caption !== undefined || data.caption !== null) {
+    if (data.caption !== undefined || data.caption !== null) {
       caption = data.caption;
     }
     var title = data.title;
@@ -362,10 +359,10 @@ jQuery(document).ready(function () {
   }
 
   $(window).bind('resize', function(e) {
-    window.resizeEvt;
+    var resizeTimeout;
     $(window).resize(function() {
-      clearTimeout(window.resizeEvt);
-      window.resizeEvt = setTimeout(function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
         Slick.resizeImages();
         resizeVideo();
       }, 250);
