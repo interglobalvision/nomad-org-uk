@@ -49,7 +49,9 @@ $margin-extra-large = ($gutter * 6)
 $font-size-basic = 16px
 $font-leading-basic = 1.45em
 $font-tracking-basic = 0.001em
+$font-tracking-large = 0.01em
 
+$font-size-larger = 20px
 $font-size-heading = 40px
 $font-size-subheading = 30px
 $font-size-caption = 12px
@@ -135,6 +137,17 @@ img
 .u-pad-tiny
   box-sizing: border-box
   padding: $margin-tiny
+
+.nomad-button
+  text-align: center
+  margin: $margin-basic auto
+  padding: $margin-small
+  a
+    border: 2px solid black
+    padding: $margin-small
+    text-transform: uppercase
+    font-size: $font-size-larger
+    letter-spacing: $font-tracking-large
 
 // HEADER
 
@@ -362,7 +375,6 @@ img
   text-align: center
 
 
-
 // SINGLE PROJECT
 
 #project-header
@@ -409,7 +421,14 @@ img
   padding-top: $margin-basic
   padding-bottom: $margin-tiny
 
+
+// PAGE
+
+#page-copy
+  margin-top: $margin-large
+
 // FOOTER
+
 #footer
   min-height: $margin-basic
   margin-top: $margin-small
