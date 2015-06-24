@@ -96,7 +96,7 @@ em, i, .font-italic
   font-style: normal
 
 strong, b, .font-bold
-  font-weight: normal
+  font-weight: bold
 
 .font-uppercase
   text-transform: uppercase
@@ -118,6 +118,10 @@ a, a:active, a:visited, .u-dummy-link
 html
   background-color: $color-white-soft
   color: $color-black-soft
+
+.invert-colors
+  color: $color-white-soft
+  background-color: $color-black-soft
 
 .overlay-active
   overflow: hidden
@@ -245,7 +249,6 @@ img
   color: $color-white-soft
   opacity: 0
   transition: opacity $basic-animation-speed
-
 
 // SINGLE
 
@@ -427,9 +430,14 @@ img
 // FOOTER
 
 #footer
+  opacity: 0
+  transition: opacity $basic-animation-speed
   min-height: $margin-basic
-  margin-top: $margin-small
+  margin-top: $margin-basic
   margin-bottom: $margin-small
+
+.no-js #footer
+  opacity: 1
 
 
 // MEDIA QUERIES

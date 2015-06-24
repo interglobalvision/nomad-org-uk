@@ -872,7 +872,7 @@ i,
 strong,
 b,
 .font-bold {
-  font-weight: normal;
+  font-weight: bold;
 }
 .font-uppercase {
   text-transform: uppercase;
@@ -896,6 +896,10 @@ a:visited:hover,
 html {
   background-color: #fff;
   color: #0e0e0e;
+}
+.invert-colors {
+  color: #fff;
+  background-color: #0e0e0e;
 }
 .overlay-active {
   overflow: hidden;
@@ -1195,9 +1199,15 @@ img {
   margin-top: 64px;
 }
 #footer {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
   min-height: 32px;
-  margin-top: 16px;
+  margin-top: 32px;
   margin-bottom: 16px;
+}
+.no-js #footer {
+  opacity: 1;
 }
 @media screen and (max-width: 800px) {
   .percent-col.into-3 {

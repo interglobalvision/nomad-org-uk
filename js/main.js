@@ -19,11 +19,15 @@ var retina = Modernizr.highresdisplay,
   basicAnimationSpeed = 700,
 
   html = $('html'),
+  mainContent = $('#main-content'),
 
   windowHeight = $(window).outerHeight(),
   windowWidth = $(window).width(),
 
   captionHeight = $('#single-slider-text').outerHeight(),
+  footerHeight = $('#footer').outerHeight(true),
+  headerHeight = $('#header').outerHeight(true),
+  footerOffset = footerHeight + headerHeight + margin,
 
   galleryOverlay = $('#gallery-overlay'),
   videoOverlay = $('#video-overlay'),
@@ -36,7 +40,6 @@ var retina = Modernizr.highresdisplay,
   videoPadding,
   videoAreaHeight,
   videoAreaWidth;
-
 
 // FUNCTIONS
 
@@ -177,6 +180,15 @@ jQuery(document).ready(function () {
     $('html').ScrollTo();
   });
 
+// FOOTER
+
+  mainContent.css('min-height', (windowHeight - footerOffset));
+  $('#footer').css('opacity', 1);
+  $(window).resize(function() {
+    mainContent.css('min-height', (windowHeight - footerOffset));
+  });
+
+
 // INDEX
 
   $('.js-post-toggle').on('click', function() {
@@ -216,7 +228,7 @@ jQuery(document).ready(function () {
 // SINGLE PROJECT
 
   if ($('body').hasClass('single-project')) {
-    $('#main-content').ScrollTo();
+    mainContent.ScrollTo();
     lazyLoadImages('.js-grid-img');
   }
 
@@ -234,7 +246,7 @@ jQuery(document).ready(function () {
 
     Slick.init();
 
-    $('#main-content').ScrollTo();
+    mainContent.ScrollTo();
   });
 
   $('#gallery-overlay-close').on('click', function() {
@@ -282,7 +294,7 @@ jQuery(document).ready(function () {
 
     resizeVideo();
 
-    $('#main-content').ScrollTo();
+    mainContent.ScrollTo();
   });
 
   $('#video-overlay-close').on('click', function() {

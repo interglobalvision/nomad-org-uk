@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#" <?php if (is_page()) {echo 'class="invert-colors"';} ?>>
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -75,48 +75,3 @@
     </div>
   </div>
 </header>
-<?php
-if (is_search() || is_tag() || is_page('Search')) {
-?>
-<section id="search" class="container">
-  <div class="row">
-<?php
-  if (is_search()) {
-    $search_term =  $_GET['s'];
-?>
-    <div class="u-align-center">
-      <form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
-        <label id="search-label">Results for: </label>
-        <input type="search" id="search-input" placeholder="<?php echo $search_term; ?>" name="s" title="<?php echo esc_attr_x( 'Results for:', 'label' ) ?>" />
-      </form>
-    </div>
-<?php
-  } else if (is_page('Search') || is_tag()) {
-?>
-    <div class="u-align-center">
-      <form role="search" method="get" id="search-form" action="<?php echo home_url( '/' ); ?>">
-        <label id="search-label">Search for: </label>
-        <input type="search" id="search-input" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-      </form>
-    </div>
-<?php
-  }
-?>
-    <div class="u-align-center">
-      <ul id="tags">
-<?php
-  $tags = get_tags();
-  foreach ($tags as $tag) {
-    $url = get_tag_link($tag->term_id);
-    echo '<a href="' . $url . '"><li>' . $tag->name . '</li></a>';
-  }
-?>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<?php
-}
-?>
