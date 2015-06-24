@@ -67,10 +67,10 @@
         <li><a href="<?php echo home_url('about/'); ?>">about</a></li>
         <li><a href="<?php echo home_url('category/news/'); ?>">news</a></li>
         <li><a href="<?php echo home_url('contact/'); ?>">contact</a></li>
-        <li class="header-social"><a href=""><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-f.svg' ); ?></a></li>
-        <li class="header-social"><a href=""><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-t.svg' ); ?></a></li>
-        <li class="header-social"><a href=""><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-v.svg' ); ?></a></li>
-        <li class="header-social"><a href=""><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-i.svg' ); ?></a></li>
+        <li class="header-social"><a href="https://www.facebook.com/pages/Nomad/26516639196" target="_blank"><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-f.svg' ); ?></a></li>
+        <li class="header-social"><a href="https://twitter.com/NOMAD_Ltd" target="_blank"><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-t.svg' ); ?></a></li>
+        <li class="header-social"><a href="https://vimeo.com/nomadtelevision" target="_blank"><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-v.svg' ); ?></a></li>
+        <li class="header-social"><a href="https://instagram.com/nomadorguk/" target="_blank"><?php echo url_get_contents( get_bloginfo('stylesheet_directory') . '/img/social-i.svg' ); ?></a></li>
       </ul>
     </div>
   </div>
