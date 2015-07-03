@@ -111,6 +111,8 @@ add_action( 'login_head', 'custom_login_logo' );
 function menu_active($title, $context) {
   if ($context === 'post-type' && is_post_type_archive($title)) {
     return true;
+  } else if ($title === 'post' && is_category()) {
+    return true;
   } else if ($context === 'page' && is_page($title)) {
     return true;
   } else {
