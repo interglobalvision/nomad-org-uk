@@ -940,6 +940,9 @@ img {
   display: inline-block;
   margin-left: 0.5em;
 }
+#menu li a.active {
+  color: #00f;
+}
 #scroll-to-menu {
   position: fixed;
   top: 18px;
@@ -947,9 +950,10 @@ img {
   z-index: 99;
 }
 .header-social svg {
-  height: 1em;
-  width: 1em;
+  height: 1.2em;
+  width: 1.2em;
   vertical-align: middle;
+  padding-bottom: 2px;
 }
 .type-post,
 .type-project {

@@ -108,6 +108,16 @@ add_action( 'login_head', 'custom_login_logo' );
 
 // UTILITY FUNCTIONS
 
+function menu_active($title, $context) {
+  if ($context === 'post-type' && is_post_type_archive($title)) {
+    return true;
+  } else if ($context === 'page' && is_page($title)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 // to replace file_get_contents
 function url_get_contents($Url) {
   if (!function_exists('curl_init')){
