@@ -1187,6 +1187,8 @@ img {
 .project-copy-section img {
   float: left;
   padding-right: 16px;
+  padding-top: 16px;
+  padding-top: 16px;
 }
 .project-copy-section img.alignright {
   float: right;
@@ -1370,5 +1372,7 @@ img {
     display: block !important;
     margin: 5.5px auto !important;
     padding: 0 !important;
+    padding-top: 5.5px;
+    padding-top: 5.5px;
   }
 }
