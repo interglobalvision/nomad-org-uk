@@ -955,6 +955,10 @@ img {
   vertical-align: middle;
   padding-bottom: 2px;
 }
+.header-social svg:hover path,
+.header-social svg:hover polygon {
+  fill: #00f;
+}
 .type-post,
 .type-project {
   margin-bottom: 16px;
