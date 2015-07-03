@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#" <?php if (is_page()) {echo 'class="invert-colors"';} ?>>
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
