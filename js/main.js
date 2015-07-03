@@ -1,11 +1,6 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
 /* global $, jQuery, document, Modernizr */
 
-function l(data) {
-  'use strict';
-  console.log(data);
-}
-
 // VARS
 
 var retina = Modernizr.highresdisplay,
@@ -46,7 +41,7 @@ var retina = Modernizr.highresdisplay,
   // LAZY IMAGES
 
 function lazyLoadImages(selector) {
-  var smallRetina = (largeImageThreshold / 2)
+  var smallRetina = (largeImageThreshold / 2);
 
   $(selector).each(function() {
     var $this = $(this);
@@ -121,7 +116,7 @@ var Slick = {
         $('#single-slider').css( 'opacity' , 1 );
         //$('#single-slider-text').css( 'opacity' , 1 );
       },
-      afterChange: function(event, slick, currentSlide, nextSlide){
+      afterChange: function(event, slick, currentSlide){
         // set caption
         _this.replaceCaptions(currentSlide);
 
@@ -374,7 +369,7 @@ jQuery(document).ready(function () {
     });
   }
 
-  $(window).bind('resize', function(e) {
+  $(window).bind('resize', function() {
     var resizeTimeout;
     $(window).resize(function() {
       clearTimeout(resizeTimeout);
