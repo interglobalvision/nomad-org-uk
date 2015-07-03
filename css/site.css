@@ -835,14 +835,15 @@ body {
   font-size: 16px;
   line-height: 1.45em;
   letter-spacing: 0.001em;
-  font-weight: normal !important;
 }
 h1 {
   font-size: 40px;
+  font-weight: normal !important;
 }
 h2,
 h3 {
   font-size: 30px;
+  font-weight: normal !important;
 }
 h4 {
   font-size: 16px;
@@ -858,7 +859,6 @@ h4,
 h5,
 h6 {
   line-height: 1.45em;
-  font-weight: normal !important;
 }
 p {
   margin-bottom: 1em;
@@ -1202,6 +1202,7 @@ img {
 .project-copy-section-title {
   padding-top: 32px;
   padding-bottom: 8px;
+  font-weight: bold !important;
 }
 #page-copy {
   margin-top: 64px;
