@@ -973,9 +973,21 @@ img {
   background-size: cover;
   background-position: center center;
 }
+.post-title.js-open .post-toggle .post-toggle-close {
+  display: inline-block !important;
+}
+.post-title.js-open .post-toggle .post-toggle-open {
+  display: none !important;
+}
 .post-toggle {
   position: absolute;
   right: 32px;
+}
+.post-toggle-open {
+  display: inline-block;
+}
+.post-toggle-close {
+  display: none;
 }
 .post-copy {
   display: none;

@@ -39,7 +39,10 @@
         }
       ?>>
         <?php the_title(); ?>
-        <span class="post-toggle">+</span>
+        <span class="post-toggle">
+          <span class="post-toggle-open">+</span>
+          <span class="post-toggle-close">-</span>
+        </span>
       </h2>
 
       <div class="post-copy">

@@ -191,9 +191,11 @@ jQuery(document).ready(function () {
     var $copy = $this.parent().find('.post-copy');
 
     if ($this.data('open') === true) {
+      $this.removeClass('js-open');
       $copy.slideUp(basicAnimationSpeed);
       $this.data('open', false);
     } else {
+      $this.addClass('js-open');
       $copy.slideDown(basicAnimationSpeed);
       $this.data('open', true);
     }

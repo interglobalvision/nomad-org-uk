@@ -197,10 +197,22 @@ img
   position: relative
   background-size: cover
   background-position: center center
+  &.js-open
+    .post-toggle
+      .post-toggle-close
+        display: inline-block !important
+      .post-toggle-open
+        display: none !important
 
 .post-toggle
   position: absolute
   right: $margin-basic
+
+.post-toggle-open
+  display: inline-block
+
+.post-toggle-close
+  display: none
 
 .post-copy
   display: none
