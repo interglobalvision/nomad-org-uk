@@ -15,7 +15,7 @@ if( have_posts() ) {
 ?>
 
     <article <?php post_class(); ?> id="project">
-      <header id="project-header" class="inner-container">
+      <header id="project-header">
         <h1 class="u-align-center"><?php the_title(); ?></h1>
       </header>
 
