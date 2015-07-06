@@ -99,12 +99,10 @@ function wpb_imagelink_setup() {
 add_action('admin_init', 'wpb_imagelink_setup', 10);
 
 // custom login logo
-/*
 function custom_login_logo() {
-  echo '<style type="text/css">h1 a { background-image:url(' . get_bloginfo( 'template_directory' ) . '/images/login-logo.png) !important; background-size:300px auto !important; width:300px !important; }</style>';
+  echo '<style type="text/css">h1 a { background-image:url(' . get_bloginfo( 'template_directory' ) . '/img/login-logo.png) !important; background-size:300px auto !important; width:300px!important; height: 135px!important; }</style>';
 }
 add_action( 'login_head', 'custom_login_logo' );
-*/
 
 // UTILITY FUNCTIONS
 
