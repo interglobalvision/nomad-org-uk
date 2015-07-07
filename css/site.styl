@@ -245,12 +245,17 @@ img
     display: none
 
 .u-holder
-  transition: background-color $basic-animation-speed
+  transition: background $basic-animation-speed
 
 .grid-hover
   &:hover
     .u-holder
-      background-color: rgba(0,0,0,.6)
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0.53) 0%, rgba(0,0,0,0.53) 44%, rgba(0,0,0,0) 66%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.53)), color-stop(44%,rgba(0,0,0,0.53)), color-stop(66%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0.53) 0%,rgba(0,0,0,0.53) 44%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(0,0,0,0.53) 0%,rgba(0,0,0,0.53) 44%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(0,0,0,0.53) 0%,rgba(0,0,0,0.53) 44%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(0,0,0,0.53) 0%,rgba(0,0,0,0.53) 44%,rgba(0,0,0,0) 66%,rgba(0,0,0,0) 100%); /* W3C */
     .grid-hover-holder
       opacity: 1
 
