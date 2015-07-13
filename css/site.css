@@ -745,22 +745,26 @@ button {
 #project-copy-main {
   margin-bottom: 96px;
 }
-.project-copy-section,
-margin-bottom: $margin-large,
-img,
-float: left,
-padding-right: $margin-small,
-padding-top: 0,
-padding-bottom: $margin-small,
-.alignright,
-float: right,
-padding-right: 0,
-padding-left: $margin-small,
-.aligncenter,
-float: none,
-display: block,
-margin: $margin-tiny auto,
-padding: 0,
+.project-copy-section {
+  margin-bottom: 64px;
+}
+.project-copy-section img {
+  float: left;
+  padding-top: 0;
+  padding-bottom: 16px;
+  padding-right: 16px;
+}
+.project-copy-section img.alignright {
+  float: right;
+  padding-right: 0;
+  padding-left: 16px;
+}
+.project-copy-section img.aligncenter {
+  float: none;
+  display: block;
+  margin: 8px auto;
+  padding: 0;
+}
 .project-copy-section-title {
   padding-top: 32px;
   padding-bottom: 8px;
