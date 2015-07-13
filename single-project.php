@@ -22,6 +22,7 @@ if( have_posts() ) {
       <section id="project-visuals" class="inner-container row js-packery-container">
  <?php
   $visuals_index = 0;
+  if ($visuals) {
   foreach ($visuals[0] as $visual) {
     if (!empty($visual['video'])) {
       $video = get_post($visual['video']);
@@ -38,6 +39,9 @@ if( have_posts() ) {
           data-vimeo-ratio="<?php echo $video_meta['_vimeo_ratio_value'][0]; ?>"
           data-title="<?php echo $video->post_title; ?>"
           >
+<?php
+        if (!empty($video->post_title)) {
+?>
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held u-pad-small">
@@ -45,6 +49,9 @@ if( have_posts() ) {
               </div>
             </div>
           </div>
+ <?php
+        }
+?>
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
             data-large="<?php echo $img_large[0]; ?>"
@@ -78,12 +85,14 @@ if( have_posts() ) {
     }
     $visuals_index++;
   }
+  }
 ?>
       </section>
 
       <section id="project-visuals-overlay">
   <?php
   $visuals_index = 0;
+  if ($visuals) {
   foreach ($visuals[0] as $visual) {
     if (!empty($visual['video'])) {
       var_dump($visual['video']);
@@ -96,11 +105,13 @@ if( have_posts() ) {
     }
     $visuals_index++;
   }
+  }
 ?>
       </section>
 
       <ul id="project-copy-nav" class="text-container">
 <?php
+  if ($copy) {
   $project_copy_index = 1;
   foreach ($copy[0] as $copy_section) {
 ?>
@@ -127,6 +138,7 @@ if( have_posts() ) {
         </div>
 <?php
   $project_copy_index++;
+  }
   }
 ?>
       </section>
