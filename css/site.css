@@ -389,6 +389,7 @@ h4,
 h5,
 h6 {
   line-height: 1.45em;
+  font-weight: normal !important;
 }
 p {
   margin-bottom: 1em;
