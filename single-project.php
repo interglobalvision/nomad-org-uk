@@ -45,7 +45,7 @@ if( have_posts() ) {
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held u-pad-small">
-                <h4><?php echo $video->post_title; ?></h4>
+                <h4 class="grid-hover-title"><?php echo $video->post_title; ?></h4>
               </div>
             </div>
           </div>
@@ -68,13 +68,19 @@ if( have_posts() ) {
       $img_largest = wp_get_attachment_image_src($img_id, 'grid-largest');
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
+<?php
+        if (!empty($visual->post_title)) {
+?>
           <div class="grid-hover-holder">
             <div class="u-holder">
               <div class="u-held u-pad-small">
-                <h4><?php if (!empty($visual['title'])) {echo $visual['title'];} ?></h4>
+                <h4 class="grid-hover-title"><?php if (!empty($visual['title'])) {echo $visual['title'];} ?></h4>
               </div>
             </div>
           </div>
+ <?php
+        }
+?>
           <img class="js-grid-img"
             data-basic="<?php echo $img[0]; ?>"
             data-large="<?php echo $img_large[0]; ?>"
