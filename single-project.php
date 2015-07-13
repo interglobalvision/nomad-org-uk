@@ -69,7 +69,7 @@ if( have_posts() ) {
 ?>
         <div class="project-visual percent-col into-3 grid-hover u-pointer js-packery-item js-load-gallery" data-gallery="<?php echo $visuals_index; ?>">
 <?php
-        if (!empty($visual->post_title)) {
+        if (!empty($visual['title'])) {
 ?>
           <div class="grid-hover-holder">
             <div class="u-holder">
