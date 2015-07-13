@@ -116,7 +116,7 @@ if( have_posts() ) {
   foreach ($copy[0] as $copy_section) {
 ?>
   <li class="js-project-copy-link u-dummy-link" data-target-id="project-copy-<?php echo $project_copy_index; ?>">
-    <h4 class="font-bold"><?php echo $copy_section['title']; ?></h4>
+    <h4><?php echo $copy_section['title']; ?></h4>
   </li>
 <?php
   $project_copy_index++;
