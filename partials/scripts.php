@@ -4,7 +4,7 @@
 <?php
 wp_footer();
 
-$google_analytics = IGV_get_option('google_analytics');
+$google_analytics = IGV_get_option('igv_google_analytics');
 if (!empty($google_analytics)) {
   echo $google_analytics;
 }

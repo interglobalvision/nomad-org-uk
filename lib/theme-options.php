@@ -12,7 +12,7 @@ class IGV_Admin {
  	 */
 	private $key = 'IGV_options';
 
-	private $prefix = 'igv';
+	private $prefix = 'igv_';
 
 	/**
  	 * Options page metabox id
