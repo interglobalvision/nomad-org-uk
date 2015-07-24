@@ -7,24 +7,13 @@
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "url": "http://www.example.com",
-      "logo": "http://www.example.com/images/logo.png",
-      "contactPoint" : [
-        { "@type" : "ContactPoint",
-          "telephone" : "+1-877-746-0909",
-          "contactType" : "customer service",
-          "contactOption" : "TollFree",
-          "areaServed" : "US"
-        } , {
-          "@type" : "ContactPoint",
-          "telephone" : "+1-505-998-3793",
-          "contactType" : "customer service"
-        } ],
+      "url": "<?php echo home_url(); ?>",
+      "logo": "<?php echo get_bloginfo( 'template_directory' ); ?>/img/login-logo.png",
       "sameAs" : [
-        "http://www.facebook.com/your-profile",
-        "http://instagram.com/yourProfile",
-        "http://www.linkedin.com/in/yourprofile",
-        "http://plus.google.com/your_profile"
+        "https://www.facebook.com/pages/Nomad/26516639196",
+        "https://twitter.com/NOMAD_Ltd",
+        "https://vimeo.com/nomadtelevision",
+        "https://instagram.com/nomadorguk/"
         ]
     }
   </script>
