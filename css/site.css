@@ -465,6 +465,12 @@ img {
   font-size: 20px;
   letter-spacing: 0.01em;
 }
+.aligncenter {
+  float: none;
+  display: block;
+  margin: 8px auto;
+  padding: 0;
+}
 input,
 button {
   border: 2px solid #000 !important;
@@ -480,6 +486,13 @@ button {
 #header {
   margin-top: 16px;
   margin-bottom: 32px;
+}
+.single-project #header {
+  margin-bottom: 16px;
+}
+#menu ul {
+  display: inline-block;
+  margin-bottom: 4px;
 }
 #menu li {
   display: inline-block;
@@ -542,10 +555,8 @@ button {
   margin: 0 auto;
   max-width: 700px;
 }
-.post-copy a,
-.post-copy a:active,
-.post-copy a:visited,
-.post-copy .u-dummy-link {
+.post-copy a:hover,
+.post-copy .u-dummy-link:hover {
   color: #00f;
 }
 .project-video {
@@ -727,6 +738,7 @@ button {
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 #project-visuals {
+  margin-top: 32px;
   margin-bottom: 96px;
 }
 .project-visual {
@@ -760,12 +772,6 @@ button {
   padding-right: 0;
   padding-left: 16px;
 }
-.project-copy-section img.aligncenter {
-  float: none;
-  display: block;
-  margin: 8px auto;
-  padding: 0;
-}
 .project-copy-section-title {
   padding-top: 32px;
   padding-bottom: 8px;
@@ -786,6 +792,12 @@ button {
   opacity: 1;
 }
 @media screen and (max-width: 800px) {
+  #header-left {
+    width: 30%;
+  }
+  #header-right {
+    width: 70%;
+  }
   .percent-col.into-3 {
     width: 50%;
   }

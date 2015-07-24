@@ -157,6 +157,12 @@ img
     font-size: $font-size-larger
     letter-spacing: $font-tracking-large
 
+.aligncenter
+  float: none
+  display: block
+  margin: $margin-tiny auto
+  padding: 0
+
 // FORMS
 
 input, button
@@ -177,7 +183,14 @@ input, button
   margin-top: $margin-small
   margin-bottom: $margin-basic
 
+.single-project
+  #header
+    margin-bottom: $margin-small
+
 #menu
+  ul
+    display: inline-block
+    margin-bottom: $margin-micro
   li
     display: inline-block
     margin-left: 0.5em
@@ -239,8 +252,7 @@ input, button
   text-align: left
   margin: 0 auto
   max-width: 700px
-
-  a, a:active, a:visited, .u-dummy-link
+  a:hover, .u-dummy-link:hover
     color: $color-blue
 
 
@@ -430,6 +442,7 @@ input, button
   text-shadow: -1px -1px 0 $color-white-soft, 1px -1px 0 $color-white-soft, -1px 1px 0 $color-white-soft, 1px 1px 0 $color-white-soft;
 
 #project-visuals
+  margin-top: $margin-basic
   margin-bottom: $margin-extra-large
 
 .project-visual
@@ -459,11 +472,6 @@ input, button
       float: right
       padding-right: 0
       padding-left: $margin-small
-    &.aligncenter
-      float: none
-      display: block
-      margin: $margin-tiny auto
-      padding: 0
 
 .project-copy-section-title
   padding-top: $margin-basic
@@ -492,6 +500,12 @@ input, button
 // MEDIA QUERIES
 
 @media screen and (max-width: 800px)
+
+  #header-left
+    width: 30%
+
+  #header-right
+    width: 70%
 
   // PULL DOWN GRID
 
