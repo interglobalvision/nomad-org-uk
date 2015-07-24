@@ -417,6 +417,7 @@ a:active,
 a:visited,
 .u-dummy-link {
   color: inherit;
+  text-decoration: none !important;
 }
 a:hover,
 a:active:hover,
@@ -546,7 +547,6 @@ button {
 .post-copy a:visited,
 .post-copy .u-dummy-link {
   color: #00f;
-  text-decoration: underline;
 }
 .project-video {
   width: 100%;
