@@ -521,10 +521,8 @@ button {
 .type-project {
   margin-bottom: 16px;
 }
-.type-post {
-  color: #fff;
-}
 .post-title {
+  color: #fff;
   box-sizing: border-box;
   padding: 32px;
   position: relative;
