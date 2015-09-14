@@ -1,6 +1,6 @@
 <meta name="description" content="<?php bloginfo('description'); ?>">
 
-<meta name="twitter:site" value="@">
+<meta name="twitter:site" value="@NOMAD_Ltd">
 <?php
 if( have_posts() ) {
   while( have_posts() ) {
