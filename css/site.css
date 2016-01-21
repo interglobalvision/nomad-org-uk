@@ -952,6 +952,9 @@ button {
   }
 }
 @media screen and (max-width: 440px) {
+  #header-left {
+    margin-bottom: 8px;
+  }
   #header-left,
   #header-right {
     width: 100%;
