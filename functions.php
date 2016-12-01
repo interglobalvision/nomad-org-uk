@@ -55,13 +55,13 @@ get_template_part( 'lib/post-types' );
 get_template_part( 'lib/meta-boxes' );
 get_template_part( 'lib/theme-options' );
 
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+
 function cmb_initialize_cmb_meta_boxes() {
-  // Add CMB2 plugin
-  if( ! class_exists( 'cmb2_bootstrap_202' ) )
-    require_once 'lib/CMB2/init.php';
-/*     require_once 'lib/CMB2-plugins/cmb-field-gallery/cmb-field-gallery.php'; */
+  if (!class_exists( 'cmb2_bootstrap_202' ) ) {
+    require_once 'vendor/webdevstudios/cmb2/init.php';
+  }
 }
+add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 
 // Disable that freaking admin bar
 add_filter('show_admin_bar', '__return_false');
