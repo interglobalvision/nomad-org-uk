@@ -61,7 +61,7 @@ function cmb_initialize_cmb_meta_boxes() {
     require_once 'vendor/webdevstudios/cmb2/init.php';
   }
 }
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 11 );
 
 // Disable that freaking admin bar
 add_filter('show_admin_bar', '__return_false');
